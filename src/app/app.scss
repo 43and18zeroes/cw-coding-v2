@@ -1,0 +1,44 @@
+/* =========================
+app.scss
+========================= */
+
+:host {
+  display: block;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth; 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
+
+.screen {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  
+  .content {
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    
+    h1 { font-size: 3rem; margin-bottom: 1rem; }
+    p { font-size: 1.5rem; opacity: 0.8; }
+  }
+}
+
+.section-one { background-color: #2a9d8f; }
+.section-two { background-color: #e9c46a; .content { color: #333; } }
+.section-three { background-color: #f4a261; }
+.section-four { background-color: #e76f51; }
