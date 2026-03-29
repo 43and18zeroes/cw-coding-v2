@@ -2,53 +2,58 @@
 app.html
 ========================= -->
 
-<div class="scroll-container">
+<div class="page-shell">
+    <aside class="left-rail">
+        <div class="brand">RM</div>
 
-    <nav class="pagination">
-        <button class="dot"
-            [class.active]="activeSection() === 's1'"
-            (click)="scrollTo('s1')"
-            aria-label="Gehe zu Screen 1"></button>
-        <button class="dot"
-            [class.active]="activeSection() === 's2'"
-            (click)="scrollTo('s2')"
-            aria-label="Gehe zu Screen 2"></button>
-        <button class="dot"
-            [class.active]="activeSection() === 's3'"
-            (click)="scrollTo('s3')"
-            aria-label="Gehe zu Screen 3"></button>
-        <button class="dot"
-            [class.active]="activeSection() === 's4'"
-            (click)="scrollTo('s4')"
-            aria-label="Gehe zu Screen 4"></button>
+        <div class="section-counter">
+            <span class="current">{{ activeIndex + 1 |
+                number:'2.0' }}</span>
+            <span class="divider"></span>
+            <span class="total">{{ sections.length |
+                number:'2.0' }}</span>
+        </div>
+    </aside>
+
+    <nav class="right-rail" aria-label="Section navigation">
+        @for (section of sections; track section.id; let i =
+        $index) {
+        <button type="button" class="dot"
+            [class.active]="activeIndex === i"
+            [attr.aria-label]="'Gehe zu Abschnitt ' + section.title"
+            (click)="scrollToSection(i)">
+        </button>
+        }
     </nav>
 
-    <section id="s1" class="screen section-one">
-        <div class="content">
-            <h1>Screen 1</h1>
-            <p>Willkommen. Scrolle nach unten.</p>
-        </div>
-    </section>
+    <main #scroller class="snap-container"
+        (scroll)="onScroll()">
+        @for (section of sections; track section.id; let i =
+        $index) {
+        <section class="snap-section"
+            [style.background-image]="'linear-gradient(rgba(0,0,0,.28), rgba(0,0,0,.52)), url(' + section.image + ')'">
+            <div class="content-wrap">
+                <div class="eyebrow">{{ section.eyebrow }}
+                </div>
+                <h1>{{ section.title }}</h1>
+                <p>{{ section.text }}</p>
 
-    <section id="s2" class="screen section-two">
-        <div class="content">
-            <h1>Screen 2</h1>
-            <p>Das ging automatisch!</p>
-        </div>
-    </section>
+                <div class="actions">
+                    <button class="primary-btn"
+                        type="button"
+                        (click)="scrollToSection(i + 1)">
+                        {{ i === sections.length - 1 ?
+                        'Zurück nach oben' : 'Mehr
+                        entdecken' }}
+                    </button>
+                </div>
+            </div>
 
-    <section id="s3" class="screen section-three">
-        <div class="content">
-            <h1>Screen 3</h1>
-            <p>Und noch einer...</p>
-        </div>
-    </section>
-
-    <section id="s4" class="screen section-four">
-        <div class="content">
-            <h1>Ende</h1>
-            <p>Du hast es geschafft.</p>
-        </div>
-    </section>
-
+            <div class="bottom-meta">
+                <span>{{ section.metaLeft }}</span>
+                <span>{{ section.metaRight }}</span>
+            </div>
+        </section>
+        }
+    </main>
 </div>

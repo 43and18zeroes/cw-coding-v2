@@ -4,126 +4,296 @@ app.scss
 
 :host {
     display: block;
-    height: 100vh;
+    height: 100dvh;
+    width: 100%;
     overflow: hidden;
-    background: #111; // Darker backdrop for smoother transitions
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    color: #fff;
+    background: #000;
 }
 
-.scroll-container {
-    height: 100vh;
-    overflow-y: scroll;
+* {
+    box-sizing: border-box;
+}
+
+button {
+    font: inherit;
+}
+
+.page-shell {
+    position: relative;
+    height: 100dvh;
+    width: 100%;
+    background: #000;
+}
+
+.snap-container {
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
-    overscroll-behavior-y: contain; // Verhindert Browser-Reload Pull-down
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 
     &::-webkit-scrollbar {
         display: none;
     }
-
-    scrollbar-width: none;
 }
 
-.screen {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-snap-align: start;
-    scroll-snap-stop: always; // Verhindert das "Durchrauschen"
+.snap-section {
     position: relative;
-    overflow: hidden;
+    min-height: 100dvh;
+    height: 100dvh;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 
-    // Modern Scroll Animation (Chrome, Edge, Opera)
-    // Das Element wird skaliert und gefadet, basierend auf seiner Position im Viewport
-    view-timeline-name: --sectionReveal;
-    view-timeline-axis: block;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
 
-    .content {
-        text-align: center;
-        color: white;
-        font-family: 'Inter', sans-serif;
-        will-change: transform, opacity;
+    padding: clamp(2rem, 4vw, 4rem);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    isolation: isolate;
 
-        // Die Animation
-        animation: reveal linear both;
-        animation-timeline: --sectionReveal;
-        animation-range: entry 25% cover 50%;
-
-        h1 {
-            font-size: clamp(2rem, 8vw, 4rem);
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-
-        p {
-            font-size: 1.2rem;
-            opacity: 0.7;
-        }
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+            linear-gradient(180deg,
+                rgba(0, 0, 0, 0.08) 0%,
+                rgba(0, 0, 0, 0.12) 20%,
+                rgba(0, 0, 0, 0.3) 55%,
+                rgba(0, 0, 0, 0.72) 100%);
+        z-index: 0;
+        pointer-events: none;
     }
 }
 
-// Keyframes für den flüssigen Übergang
-@keyframes reveal {
-    from {
-        opacity: 0;
-        transform: translateY(100px) scale(0.9);
-    }
+.content-wrap,
+.bottom-meta {
+    position: relative;
+    z-index: 1;
+}
 
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
+.content-wrap {
+    width: min(720px, 100%);
+    padding-bottom: 3.5rem;
+}
+
+.eyebrow {
+    margin-bottom: 0.9rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.72;
+}
+
+h1 {
+    margin: 0 0 1rem;
+    max-width: 12ch;
+    font-size: clamp(2.6rem, 7vw, 6.5rem);
+    line-height: 0.95;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+}
+
+p {
+    margin: 0;
+    max-width: 42ch;
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.84);
+}
+
+.actions {
+    margin-top: 2rem;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 1.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition:
+        background 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.16);
+        border-color: rgba(255, 255, 255, 0.65);
+        transform: translateY(-1px);
     }
 }
 
-// Pagination Dots
-.pagination {
+.bottom-meta {
+    position: absolute;
+    left: clamp(2rem, 4vw, 4rem);
+    right: clamp(2rem, 4vw, 4rem);
+    bottom: 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.left-rail {
     position: fixed;
-    right: 2rem;
+    top: 0;
+    left: 0;
+    z-index: 20;
+
+    height: 100dvh;
+    width: 92px;
+    padding: 2rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    pointer-events: none;
+}
+
+.brand {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 0.8rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.section-counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+.divider {
+    display: block;
+    width: 1px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.right-rail {
+    position: fixed;
     top: 50%;
+    right: 1.2rem;
+    z-index: 20;
+
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    z-index: 10;
+    gap: 0.9rem;
+}
 
-    a {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
-        border: 2px solid transparent;
-        transition: all 0.3s ease;
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    background: transparent;
+    cursor: pointer;
+    transition:
+        transform 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease;
 
-        &:hover {
-            background: white;
-            transform: scale(1.2);
-        }
+    &:hover {
+        transform: scale(1.12);
+        border-color: rgba(255, 255, 255, 0.9);
+    }
+
+    &.active {
+        background: #fff;
+        border-color: #fff;
+        transform: scale(1.15);
     }
 }
 
-// Backgrounds
-.section-one {
-    background: radial-gradient(circle, #2a9d8f, #21867a);
-}
+@media (max-width: 900px) {
+    .left-rail {
+        width: 60px;
+        padding: 1.25rem 0.5rem;
+    }
 
-.section-two {
-    background: radial-gradient(circle, #e9c46a, #d4a373);
+    .content-wrap {
+        padding-bottom: 4.5rem;
+    }
 
-    .content {
-        color: #222;
-
-        h1,
-        p {
-            color: inherit;
-        }
+    .bottom-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        bottom: 1rem;
     }
 }
 
-.section-three {
-    background: radial-gradient(circle, #f4a261, #e76f51);
+@media (max-width: 640px) {
+    .left-rail {
+        display: none;
+    }
+
+    .right-rail {
+        right: 0.75rem;
+        gap: 0.7rem;
+    }
+
+    .snap-section {
+        padding: 1.25rem;
+        align-items: flex-end;
+    }
+
+    h1 {
+        max-width: 10ch;
+    }
+
+    p {
+        max-width: 100%;
+        font-size: 0.98rem;
+    }
+
+    .primary-btn {
+        width: 100%;
+    }
+
+    .bottom-meta {
+        left: 1.25rem;
+        right: 2.75rem;
+    }
 }
 
-.section-four {
-    background: radial-gradient(circle, #264653, #1a303a);
+@media (prefers-reduced-motion: reduce) {
+    .snap-container {
+        scroll-behavior: auto;
+    }
+
+    .primary-btn,
+    .dot {
+        transition: none;
+    }
 }
