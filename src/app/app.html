@@ -3,38 +3,52 @@ app.html
 ========================= -->
 
 <div class="scroll-container">
+
     <nav class="pagination">
-        <a href="#s1"></a>
-        <a href="#s2"></a>
-        <a href="#s3"></a>
-        <a href="#s4"></a>
+        <button class="dot"
+            [class.active]="activeSection() === 's1'"
+            (click)="scrollTo('s1')"
+            aria-label="Gehe zu Screen 1"></button>
+        <button class="dot"
+            [class.active]="activeSection() === 's2'"
+            (click)="scrollTo('s2')"
+            aria-label="Gehe zu Screen 2"></button>
+        <button class="dot"
+            [class.active]="activeSection() === 's3'"
+            (click)="scrollTo('s3')"
+            aria-label="Gehe zu Screen 3"></button>
+        <button class="dot"
+            [class.active]="activeSection() === 's4'"
+            (click)="scrollTo('s4')"
+            aria-label="Gehe zu Screen 4"></button>
     </nav>
 
     <section id="s1" class="screen section-one">
         <div class="content">
-            <h1>Genesis</h1>
-            <p>Sanftes Scrollen trifft auf Design.</p>
+            <h1>Screen 1</h1>
+            <p>Willkommen. Scrolle nach unten.</p>
         </div>
     </section>
 
     <section id="s2" class="screen section-two">
         <div class="content">
-            <h1>Präzision</h1>
-            <p>Jeder Screen stoppt genau dort, wo er soll.</p>
+            <h1>Screen 2</h1>
+            <p>Das ging automatisch!</p>
         </div>
     </section>
 
     <section id="s3" class="screen section-three">
         <div class="content">
-            <h1>Dynamik</h1>
-            <p>CSS-only Animationen beim Scrollen.</p>
+            <h1>Screen 3</h1>
+            <p>Und noch einer...</p>
         </div>
     </section>
 
     <section id="s4" class="screen section-four">
         <div class="content">
-            <h1>Finale</h1>
-            <p>UX-Optimierung abgeschlossen.</p>
+            <h1>Ende</h1>
+            <p>Du hast es geschafft.</p>
         </div>
     </section>
+
 </div>
