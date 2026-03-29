@@ -74,7 +74,7 @@ export class App implements AfterViewInit {
   private isAnimatingScroll = false;
   private animationTimeout: ReturnType<typeof setTimeout> | null = null;
   private wheelAccumulator = 0;
-  private readonly wheelThreshold = 45;
+  private readonly wheelThreshold = 30;
 
   get activeIndex(): number {
     return this.activeIndexSignal();
@@ -117,7 +117,7 @@ export class App implements AfterViewInit {
     this.animationTimeout = setTimeout(() => {
       this.isAnimatingScroll = false;
       this.updateActiveSection();
-    }, 850);
+    }, 650);
   }
 
   @HostListener('wheel', ['$event'])
@@ -168,15 +168,7 @@ export class App implements AfterViewInit {
   }
 
   private normalizeIndex(index: number): number {
-    if (index >= this.sections.length) {
-      return 0;
-    }
-
-    if (index < 0) {
-      return 0;
-    }
-
-    return index;
+    return Math.max(0, Math.min(index, this.sections.length - 1));
   }
 
   private isTouchLikeDevice(): boolean {
