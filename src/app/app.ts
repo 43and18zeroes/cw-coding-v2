@@ -71,6 +71,10 @@ export class App implements AfterViewInit {
   ];
 
   private scrollTicking = false;
+  private isAnimatingScroll = false;
+  private animationTimeout: ReturnType<typeof setTimeout> | null = null;
+  private wheelAccumulator = 0;
+  private readonly wheelThreshold = 45;
 
   get activeIndex(): number {
     return this.activeIndexSignal();
@@ -95,21 +99,56 @@ export class App implements AfterViewInit {
 
   protected scrollToSection(index: number): void {
     const scroller = this.scrollerRef.nativeElement;
+    const clampedIndex = this.normalizeIndex(index);
+    const top = clampedIndex * scroller.clientHeight;
 
-    if (index >= this.sections.length) {
-      index = 0;
-    }
-
-    if (index < 0) {
-      index = 0;
-    }
-
-    const top = index * window.innerHeight;
+    this.isAnimatingScroll = true;
+    this.activeIndexSignal.set(clampedIndex);
 
     scroller.scrollTo({
       top,
       behavior: 'smooth'
     });
+
+    if (this.animationTimeout) {
+      clearTimeout(this.animationTimeout);
+    }
+
+    this.animationTimeout = setTimeout(() => {
+      this.isAnimatingScroll = false;
+      this.updateActiveSection();
+    }, 850);
+  }
+
+  @HostListener('wheel', ['$event'])
+  protected onWheel(event: WheelEvent): void {
+    if (this.isTouchLikeDevice()) {
+      return;
+    }
+
+    const scroller = this.scrollerRef.nativeElement;
+    const isInsideScroller = scroller.contains(event.target as Node);
+
+    if (!isInsideScroller) {
+      return;
+    }
+
+    event.preventDefault();
+
+    if (this.isAnimatingScroll) {
+      return;
+    }
+
+    this.wheelAccumulator += event.deltaY;
+
+    if (Math.abs(this.wheelAccumulator) < this.wheelThreshold) {
+      return;
+    }
+
+    const direction = this.wheelAccumulator > 0 ? 1 : -1;
+    this.wheelAccumulator = 0;
+
+    this.scrollToSection(this.activeIndex + direction);
   }
 
   @HostListener('window:resize')
@@ -126,5 +165,21 @@ export class App implements AfterViewInit {
     this.activeIndexSignal.set(
       Math.max(0, Math.min(nextIndex, this.sections.length - 1))
     );
+  }
+
+  private normalizeIndex(index: number): number {
+    if (index >= this.sections.length) {
+      return 0;
+    }
+
+    if (index < 0) {
+      return 0;
+    }
+
+    return index;
+  }
+
+  private isTouchLikeDevice(): boolean {
+    return window.matchMedia('(pointer: coarse)').matches;
   }
 }
