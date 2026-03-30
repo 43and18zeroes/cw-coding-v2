@@ -1,21 +1,112 @@
+/* =========================
+hero-section.scss
+========================= */
+
 :host {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-
     min-height: 100dvh;
     height: 100dvh;
     width: 100%;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-
     padding: clamp(2rem, 4vw, 4rem);
-    background-image: linear-gradient(rgba(0, 0, 0, .28), rgba(0, 0, 0, .52)), url('https://cdn.pixabay.com/photo/2015/03/18/11/10/the-scenery-679134_960_720.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, .28), rgba(0, 0, 0, .52)),
+        url('https://cdn.pixabay.com/photo/2015/03/18/11/10/the-scenery-679134_960_720.jpg');
     background-size: cover;
     background-position: center;
     isolation: isolate;
+
+    .eyebrow,
+    h1,
+    p,
+    .actions {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+            opacity 0.7s cubic-bezier(0.2, 0.0, 0.0, 1.0),
+            transform 0.7s cubic-bezier(0.2, 0.0, 0.0, 1.0);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.08) 0%,
+                rgba(0, 0, 0, 0.3) 55%,
+                rgba(0, 0, 0, 0.72) 100%);
+        z-index: 0;
+        pointer-events: none;
+    }
+}
+
+:host(.active) {
+
+    .eyebrow,
+    h1,
+    p,
+    .actions {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .eyebrow {
+        transition-delay: 0.1s;
+    }
+
+    h1 {
+        transition-delay: 0.2s;
+    }
+
+    p {
+        transition-delay: 0.3s;
+    }
+
+    .actions {
+        transition-delay: 0.4s;
+    }
 }
 
 .content-wrap {
-    margin: 0;
+    position: relative;
+    z-index: 1;
+    width: min(720px, 100%);
+    padding-bottom: 3.5rem;
+}
+
+.eyebrow {
+    margin-bottom: 0.9rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.72;
+}
+
+h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2.6rem, 7vw, 6.5rem);
+    line-height: 0.95;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 1.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 180ms ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.16);
+        transform: translateY(-1px);
+    }
 }
