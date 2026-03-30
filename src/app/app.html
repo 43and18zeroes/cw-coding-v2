@@ -31,7 +31,9 @@ app.html
         @for (section of sections; track section.id; let i =
         $index) {
         <section class="snap-section"
+            [class.active]="activeIndex === i"
             [style.background-image]="'linear-gradient(rgba(0,0,0,.28), rgba(0,0,0,.52)), url(' + section.image + ')'">
+
             <div class="content-wrap">
                 <div class="eyebrow">{{ section.eyebrow }}
                 </div>
@@ -47,11 +49,6 @@ app.html
                         entdecken' }}
                     </button>
                 </div>
-            </div>
-
-            <div class="bottom-meta">
-                <span>{{ section.metaLeft }}</span>
-                <span>{{ section.metaRight }}</span>
             </div>
         </section>
         }
