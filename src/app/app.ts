@@ -5,7 +5,6 @@ import {
   ViewChild,
   signal
 } from '@angular/core';
-import { DecimalPipe } from '@angular/common';
 import { HeroSection } from "./sections/hero-section/hero-section";
 
 type SnapSection = {
@@ -21,7 +20,7 @@ type SnapSection = {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [DecimalPipe, HeroSection],
+  imports: [HeroSection],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
