@@ -85,7 +85,7 @@ export class App implements AfterViewInit {
   }
 
   protected onScroll(): void {
-    if (this.scrollTicking) {
+    if (this.scrollTicking || this.isAnimatingScroll) {
       return;
     }
 
@@ -117,7 +117,7 @@ export class App implements AfterViewInit {
     this.animationTimeout = setTimeout(() => {
       this.isAnimatingScroll = false;
       this.updateActiveSection();
-    }, 650);
+    }, 400);
   }
 
   @HostListener('wheel', ['$event'])
