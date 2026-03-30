@@ -1,0 +1,21 @@
+:host {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    min-height: 100dvh;
+    height: 100dvh;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+
+    padding: clamp(2rem, 4vw, 4rem);
+    background-image: linear-gradient(rgba(0, 0, 0, .28), rgba(0, 0, 0, .52)), url('https://cdn.pixabay.com/photo/2015/03/18/11/10/the-scenery-679134_960_720.jpg');
+    background-size: cover;
+    background-position: center;
+    isolation: isolate;
+}
+
+.content-wrap {
+    margin: 0;
+}
