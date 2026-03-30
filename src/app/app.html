@@ -3,17 +3,6 @@ app.html
 ========================= -->
 
 <div class="page-shell">
-    <aside class="left-rail">
-        <div class="brand">RM</div>
-        <div class="section-counter">
-            <span class="current">{{ activeIndex + 1 |
-                number:'2.0' }}</span>
-            <span class="divider"></span>
-            <span class="total">{{ sections.length |
-                number:'2.0' }}</span>
-        </div>
-    </aside>
-
     <nav class="right-rail" aria-label="Section navigation">
         @for (section of sections; track section.id; let i =
         $index) {

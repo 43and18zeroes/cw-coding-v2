@@ -7,9 +7,6 @@ app.scss
   height: 100dvh;
   width: 100%;
   overflow: hidden;
-  font-family: Inter, sans-serif;
-  color: #fff;
-  background: #000;
 }
 
 .snap-container {
@@ -19,33 +16,6 @@ app.scss
   scroll-behavior: smooth;
   scrollbar-width: none;
   &::-webkit-scrollbar { display: none; }
-}
-
-.left-rail {
-  position: fixed;
-  top: 0; left: 0; z-index: 20;
-  height: 100dvh; width: 92px;
-  display: flex; flex-direction: column;
-  justify-content: space-between; align-items: center;
-  padding: 2rem 1rem;
-  pointer-events: none;
-}
-
-.brand {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-}
-
-.section-counter {
-  display: flex; flex-direction: column;
-  align-items: center; gap: 0.65rem;
-}
-
-.divider {
-  width: 1px; height: 36px;
-  background: rgba(255, 255, 255, 0.35);
 }
 
 .right-rail {
