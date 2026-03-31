@@ -2,7 +2,10 @@ import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-hero-section',
-  imports: [],
+  standalone: true,
+  host: {
+    'class': 'snap-section-base'
+  },
   templateUrl: './hero-section.html',
   styleUrl: './hero-section.scss',
 })

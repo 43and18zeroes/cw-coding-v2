@@ -3,15 +3,8 @@ hero-section.scss
 ========================= */
 
 :host {
-    display: flex;
-    min-height: 100dvh;
-    height: 100dvh;
-    width: 100%;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
     background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)),
         url('https://cdn.pixabay.com/photo/2015/03/18/11/10/the-scenery-679134_960_720.jpg');
     background-size: cover;
     background-position: center;
-    isolation: isolate;
 }
