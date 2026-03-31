@@ -7,6 +7,10 @@ import {
 } from '@angular/core';
 import { HeroSection } from "./sections/hero-section/hero-section";
 import { AboutMeSection } from "./sections/about-me-section/about-me-section";
+import { SkillsSection } from "./sections/skills-section/skills-section";
+import { PortfolioSection00 } from "./sections/portfolio-section-00/portfolio-section-00";
+import { PortfolioSection01 } from "./sections/portfolio-section-01/portfolio-section-01";
+import { ContactSection } from "./sections/contact-section/contact-section";
 
 type SnapSection = {
   id: number;
@@ -21,7 +25,7 @@ type SnapSection = {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeroSection, AboutMeSection],
+  imports: [HeroSection, AboutMeSection, SkillsSection, PortfolioSection00, PortfolioSection01, ContactSection],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -31,9 +35,12 @@ export class App {
   protected readonly activeIndexSignal = signal(0);
 
   protected readonly sections = [
-    { id: 'perf', title: 'Performance' },
-    { id: 'craft', title: 'Craft' },
-    { id: 'design', title: 'Design' }
+    { id: 'hero', title: 'Hero' },
+    { id: 'abou', title: 'About me' },
+    { id: 'skil', title: 'Skills' },
+    { id: 'po00', title: 'Portfolio 01' },
+    { id: 'po01', title: 'Portfolio 02' },
+    { id: 'cont', title: 'Contact' }
   ];
 
   // protected readonly sections: SnapSection[] = [
