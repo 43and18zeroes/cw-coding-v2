@@ -4,7 +4,7 @@ import { Component, input, output } from '@angular/core';
   selector: 'app-hero-section',
   standalone: true,
   host: {
-    'class': 'snap-section-base'
+    'class': 'snap-section-base short-layout'
   },
   templateUrl: './hero-section.html',
   styleUrl: './hero-section.scss',

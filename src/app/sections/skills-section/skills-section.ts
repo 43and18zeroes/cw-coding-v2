@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-skills-section',
   standalone: true,
   host: {
-    'class': 'snap-section-base'
+    'class': 'snap-section-base short-layout'
   },
   templateUrl: './skills-section.html',
   styleUrl: './skills-section.scss',

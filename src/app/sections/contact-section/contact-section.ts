@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-contact-section',
   standalone: true,
   host: {
-    'class': 'snap-section-base'
+    'class': 'snap-section-base short-layout'
   },
   templateUrl: './contact-section.html',
   styleUrl: './contact-section.scss',

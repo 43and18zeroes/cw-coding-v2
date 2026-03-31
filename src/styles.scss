@@ -3,7 +3,7 @@ styles.scss
 ========================= */
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 .snap-section-base {
@@ -15,4 +15,13 @@ body {
   scroll-snap-stop: always;
   isolation: isolate;
   position: relative;
+}
+
+/* Die YouTube-Shorts Erweiterung */
+.short-layout {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
 }

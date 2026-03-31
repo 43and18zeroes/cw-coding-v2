@@ -4,7 +4,7 @@ import { Component, input, output } from '@angular/core';
   selector: 'app-about-me-section',
   standalone: true,
   host: {
-    'class': 'snap-section-base'
+    'class': 'snap-section-base short-layout'
   },
   templateUrl: './about-me-section.html',
   styleUrl: './about-me-section.scss',

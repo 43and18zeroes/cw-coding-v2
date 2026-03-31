@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-portfolio-section-00',
   standalone: true,
   host: {
-    'class': 'snap-section-base'
+    'class': 'snap-section-base short-layout'
   },
   templateUrl: './portfolio-section-00.html',
   styleUrl: './portfolio-section-00.scss',
