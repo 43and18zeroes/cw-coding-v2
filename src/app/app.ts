@@ -6,6 +6,7 @@ import {
   signal
 } from '@angular/core';
 import { HeroSection } from "./sections/hero-section/hero-section";
+import { AboutMeSection } from "./sections/about-me-section/about-me-section";
 
 type SnapSection = {
   id: number;
@@ -20,7 +21,7 @@ type SnapSection = {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeroSection],
+  imports: [HeroSection, AboutMeSection],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
