@@ -10,7 +10,7 @@ app.scss
 }
 
 .portrait-lock {
-  display: none; // Standardmäßig versteckt
+  display: none;
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
@@ -35,7 +35,7 @@ app.scss
   }
 
   .page-shell {
-    display: none; // Versteckt das gesamte Portfolio im Landscape-Modus
+    display: none;
   }
 }
 
