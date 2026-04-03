@@ -70,8 +70,8 @@ app.scss
     height: 100%;
     display: block;
     fill: #fff;
-    animation: smooth-rotate 2.8s infinite cubic-bezier(0.77, 0, 0.175, 1);
     transform-origin: center;
+    animation: device-tilt 2.6s infinite cubic-bezier(0.65, 0, 0.35, 1);
   }
 }
 
@@ -199,21 +199,30 @@ app.scss
   }
 }
 
-@keyframes smooth-rotate {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
+@keyframes device-tilt {
 
-  15% {
-    transform: rotate(-15deg) scale(0.95);
-  }
-
-  60% {
-    transform: rotate(-90deg) scale(1.05);
-  }
-
-  75%,
+  0%,
   100% {
-    transform: rotate(-90deg) scale(1);
+    transform: rotate(0deg) scale(1) translateY(0);
+  }
+
+  18% {
+    transform: rotate(-8deg) scale(0.98) translateY(1px);
+  }
+
+  42% {
+    transform: rotate(-90deg) scale(1.04) translateY(0);
+  }
+
+  58% {
+    transform: rotate(-90deg) scale(1.04) translateY(0);
+  }
+
+  74% {
+    transform: rotate(-82deg) scale(1.01) translateY(-1px);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1) translateY(0);
   }
 }
