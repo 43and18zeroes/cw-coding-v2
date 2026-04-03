@@ -43,10 +43,20 @@ app.scss
   .lock-icon {
     position: relative;
     z-index: 2;
-    font-size: 4rem;
+    width: 4rem;
+    height: 4rem;
     margin-bottom: 1.5rem;
-    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     animation: smooth-rotate 2.8s infinite cubic-bezier(0.77, 0, 0.175, 1);
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: #fff;
+      display: block;
+    }
   }
 
   .lock-content {
