@@ -120,7 +120,8 @@ app.scss
   overflow-x: hidden;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
-  overscroll-behavior-y: contain;
+  overscroll-behavior-y: auto;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
