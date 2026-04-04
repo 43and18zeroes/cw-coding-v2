@@ -1,10 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  ViewChild,
-  signal
-} from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, signal } from '@angular/core';
 import { HeroSection } from "./sections/hero-section/hero-section";
 import { AboutMeSection } from "./sections/about-me-section/about-me-section";
 import { SkillsSection } from "./sections/skills-section/skills-section";
@@ -22,26 +16,24 @@ import { ContactSection } from "./sections/contact-section/contact-section";
 export class App {
   @ViewChild('scroller', { static: true }) scrollerRef!: ElementRef<HTMLElement>;
 
-  protected readonly activeIndexSignal = signal(0);
+  protected readonly activeIndex = signal(0);
 
   protected readonly sections = [
     { id: 'hero', title: 'Hero' },
-    { id: 'abou', title: 'About me' },
-    { id: 'skil', title: 'Skills' },
-    { id: 'po00', title: 'Portfolio 01' },
-    { id: 'po01', title: 'Portfolio 02' },
-    { id: 'cont', title: 'Contact' }
+    { id: 'about', title: 'About me' },
+    { id: 'skills', title: 'Skills' },
+    { id: 'portfolio-1', title: 'Portfolio 01' },
+    { id: 'portfolio-2', title: 'Portfolio 02' },
+    { id: 'contact', title: 'Contact' }
   ];
+
+  private readonly WHEEL_SCROLL_THRESHOLD = 30;
+  private readonly SCROLL_ANIMATION_MS = 400;
 
   private scrollTicking = false;
   private isAnimatingScroll = false;
   private animationTimeout: ReturnType<typeof setTimeout> | null = null;
   private wheelAccumulator = 0;
-  private readonly wheelThreshold = 30;
-
-  get activeIndex(): number {
-    return this.activeIndexSignal();
-  }
 
   ngAfterViewInit(): void {
     this.updateActiveSection();
@@ -53,7 +45,6 @@ export class App {
     }
 
     this.scrollTicking = true;
-
     requestAnimationFrame(() => {
       this.updateActiveSection();
       this.scrollTicking = false;
@@ -66,12 +57,9 @@ export class App {
     const top = clampedIndex * scroller.clientHeight;
 
     this.isAnimatingScroll = true;
-    this.activeIndexSignal.set(clampedIndex);
+    this.activeIndex.set(clampedIndex);
 
-    scroller.scrollTo({
-      top,
-      behavior: 'smooth'
-    });
+    scroller.scrollTo({ top, behavior: 'smooth' });
 
     if (this.animationTimeout) {
       clearTimeout(this.animationTimeout);
@@ -80,19 +68,17 @@ export class App {
     this.animationTimeout = setTimeout(() => {
       this.isAnimatingScroll = false;
       this.updateActiveSection();
-    }, 400);
+    }, this.SCROLL_ANIMATION_MS);
   }
 
   @HostListener('wheel', ['$event'])
   protected onWheel(event: WheelEvent): void {
-    if (this.isTouchLikeDevice()) {
+    if (this.isCoarsePointerDevice()) {
       return;
     }
 
     const scroller = this.scrollerRef.nativeElement;
-    const isInsideScroller = scroller.contains(event.target as Node);
-
-    if (!isInsideScroller) {
+    if (!scroller.contains(event.target as Node)) {
       return;
     }
 
@@ -104,14 +90,14 @@ export class App {
 
     this.wheelAccumulator += event.deltaY;
 
-    if (Math.abs(this.wheelAccumulator) < this.wheelThreshold) {
+    if (Math.abs(this.wheelAccumulator) < this.WHEEL_SCROLL_THRESHOLD) {
       return;
     }
 
     const direction = this.wheelAccumulator > 0 ? 1 : -1;
     this.wheelAccumulator = 0;
 
-    this.scrollToSection(this.activeIndex + direction);
+    this.scrollToSection(this.activeIndex() + direction);
   }
 
   @HostListener('window:keydown', ['$event'])
@@ -123,11 +109,7 @@ export class App {
     const target = event.target as HTMLElement | null;
     const tagName = target?.tagName?.toLowerCase();
 
-    const isTypingField =
-      tagName === 'input' ||
-      tagName === 'textarea' ||
-      target?.isContentEditable;
-
+    const isTypingField = tagName === 'input' || tagName === 'textarea' || target?.isContentEditable;
     if (isTypingField) {
       return;
     }
@@ -136,12 +118,12 @@ export class App {
 
     if (key === 'arrowdown' || key === 's') {
       event.preventDefault();
-      this.scrollToSection(this.activeIndex + 1);
+      this.scrollToSection(this.activeIndex() + 1);
     }
 
     if (key === 'arrowup' || key === 'w') {
       event.preventDefault();
-      this.scrollToSection(this.activeIndex - 1);
+      this.scrollToSection(this.activeIndex() - 1);
     }
   }
 
@@ -153,19 +135,16 @@ export class App {
   private updateActiveSection(): void {
     const scroller = this.scrollerRef.nativeElement;
     const viewportHeight = scroller.clientHeight || window.innerHeight;
-    const rawIndex = scroller.scrollTop / viewportHeight;
-    const nextIndex = Math.round(rawIndex);
+    const nextIndex = Math.round(scroller.scrollTop / viewportHeight);
 
-    this.activeIndexSignal.set(
-      Math.max(0, Math.min(nextIndex, this.sections.length - 1))
-    );
+    this.activeIndex.set(this.normalizeIndex(nextIndex));
   }
 
   private normalizeIndex(index: number): number {
     return Math.max(0, Math.min(index, this.sections.length - 1));
   }
 
-  private isTouchLikeDevice(): boolean {
+  private isCoarsePointerDevice(): boolean {
     return window.matchMedia('(pointer: coarse)').matches;
   }
 }
