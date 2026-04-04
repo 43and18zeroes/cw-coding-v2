@@ -1,5 +1,5 @@
 /* =========================
-sticky-header.scss
+   sticky-header.scss
 ========================= */
 
 :host {
@@ -16,7 +16,7 @@ sticky-header.scss
   left: 0;
   width: 100%;
   z-index: 50;
-  padding: 1rem 1.25rem;
+  padding: 1rem;
   pointer-events: none;
 }
 
@@ -30,7 +30,7 @@ sticky-header.scss
   margin: 0 auto;
   padding: 0.85rem 1rem;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
+  border-radius: 22px;
   background: rgba(10, 10, 10, 0.55);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -48,8 +48,12 @@ sticky-header.scss
   padding: 0;
 }
 
+/* =========================
+   Navigation
+========================= */
+
 .header-nav {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 0.5rem;
   flex-wrap: wrap;
@@ -85,7 +89,7 @@ sticky-header.scss
 ========================= */
 
 .menu-toggle {
-  display: none;
+  display: inline-flex;
   width: 44px;
   height: 44px;
   padding: 0;
@@ -197,19 +201,23 @@ sticky-header.scss
 }
 
 /* =========================
-   Responsive
+   Tablet / Desktop
 ========================= */
 
-@media (max-width: 900px) {
-  .header-nav {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: inline-flex;
+@media (min-width: 901px) {
+  .top-header {
+    padding: 1rem 1.25rem;
   }
 
   .header-inner {
-    border-radius: 22px;
+    border-radius: 999px;
+  }
+
+  .header-nav {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: none;
   }
 }
