@@ -20,6 +20,11 @@ app.html
 </div>
 
 <div class="page-shell">
+    <app-sticky-header [sections]="sections"
+        [activeIndex]="activeIndex()"
+        (navigate)="scrollToSection($event)">
+    </app-sticky-header>
+
     <nav class="right-rail" aria-label="Section navigation">
         @for (section of sections; track section.id; let i =
         $index) {
@@ -34,21 +39,32 @@ app.html
         (scroll)="onScroll()">
         <app-hero-section
             [class.active]="activeIndex() === 0"
-            (next)="scrollToSection(1)" />
+            (next)="scrollToSection(1)">
+        </app-hero-section>
+
         <app-about-me-section
             [class.active]="activeIndex() === 1"
-            (next)="scrollToSection(2)" />
+            (next)="scrollToSection(2)">
+        </app-about-me-section>
+
         <app-skills-section
             [class.active]="activeIndex() === 2"
-            (next)="scrollToSection(3)" />
+            (next)="scrollToSection(3)">
+        </app-skills-section>
+
         <app-portfolio-section-00
             [class.active]="activeIndex() === 3"
-            (next)="scrollToSection(4)" />
+            (next)="scrollToSection(4)">
+        </app-portfolio-section-00>
+
         <app-portfolio-section-01
             [class.active]="activeIndex() === 4"
-            (next)="scrollToSection(5)" />
+            (next)="scrollToSection(5)">
+        </app-portfolio-section-01>
+
         <app-contact-section
             [class.active]="activeIndex() === 5"
-            (next)="scrollToSection(0)" />
+            (next)="scrollToSection(0)">
+        </app-contact-section>
     </main>
 </div>

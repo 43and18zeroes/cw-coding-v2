@@ -1,15 +1,30 @@
-import { Component, ElementRef, HostListener, ViewChild, signal } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  ViewChild,
+  signal
+} from '@angular/core';
 import { HeroSection } from "./sections/hero-section/hero-section";
 import { AboutMeSection } from "./sections/about-me-section/about-me-section";
 import { SkillsSection } from "./sections/skills-section/skills-section";
 import { PortfolioSection00 } from "./sections/portfolio-section-00/portfolio-section-00";
 import { PortfolioSection01 } from "./sections/portfolio-section-01/portfolio-section-01";
 import { ContactSection } from "./sections/contact-section/contact-section";
+import { StickyHeaderComponent } from './sticky-header/sticky-header';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeroSection, AboutMeSection, SkillsSection, PortfolioSection00, PortfolioSection01, ContactSection],
+  imports: [
+    HeroSection,
+    AboutMeSection,
+    SkillsSection,
+    PortfolioSection00,
+    PortfolioSection01,
+    ContactSection,
+    StickyHeaderComponent
+  ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -45,6 +60,7 @@ export class App {
     }
 
     this.scrollTicking = true;
+
     requestAnimationFrame(() => {
       this.updateActiveSection();
       this.scrollTicking = false;
@@ -78,6 +94,7 @@ export class App {
     }
 
     const scroller = this.scrollerRef.nativeElement;
+
     if (!scroller.contains(event.target as Node)) {
       return;
     }
@@ -109,7 +126,11 @@ export class App {
     const target = event.target as HTMLElement | null;
     const tagName = target?.tagName?.toLowerCase();
 
-    const isTypingField = tagName === 'input' || tagName === 'textarea' || target?.isContentEditable;
+    const isTypingField =
+      tagName === 'input' ||
+      tagName === 'textarea' ||
+      target?.isContentEditable;
+
     if (isTypingField) {
       return;
     }

@@ -1,0 +1,74 @@
+<!-- ========================
+sticky-header.html
+========================= -->
+
+<header class="top-header">
+  <div class="header-inner">
+    <button
+      type="button"
+      class="brand"
+      (click)="onNavigate(0)">
+      Portfolio
+    </button>
+
+    <nav class="header-nav" aria-label="Slide navigation">
+      @for (section of sections; track section.id; let i = $index) {
+        <button
+          type="button"
+          class="header-link"
+          [class.active]="activeIndex === i"
+          (click)="onNavigate(i)">
+          {{ section.title }}
+        </button>
+      }
+    </nav>
+
+    <button
+      type="button"
+      class="menu-toggle"
+      aria-label="Open menu"
+      [attr.aria-expanded]="menuOpen()"
+      (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<button
+  type="button"
+  class="mobile-overlay"
+  [class.open]="menuOpen()"
+  aria-label="Close menu"
+  (click)="closeMenu()">
+</button>
+
+<aside
+  class="mobile-menu"
+  [class.open]="menuOpen()"
+  aria-label="Mobile navigation">
+  <div class="mobile-menu-header">
+    <span>Menu</span>
+
+    <button
+      type="button"
+      class="mobile-close"
+      aria-label="Close menu"
+      (click)="closeMenu()">
+      ✕
+    </button>
+  </div>
+
+  <nav class="mobile-nav">
+    @for (section of sections; track section.id; let i = $index) {
+      <button
+        type="button"
+        class="mobile-link"
+        [class.active]="activeIndex === i"
+        (click)="onNavigate(i)">
+        {{ section.title }}
+      </button>
+    }
+  </nav>
+</aside>

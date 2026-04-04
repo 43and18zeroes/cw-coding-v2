@@ -23,7 +23,6 @@ app.scss
   color: #fff;
   font-family: system-ui, -apple-system, sans-serif;
   background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
-
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -58,7 +57,6 @@ app.scss
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   opacity: 0;
   transform: translateY(10px) scale(0.96);
   transition:
@@ -81,7 +79,6 @@ app.scss
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-
   opacity: 0;
   transform: translateY(14px);
   transition:
@@ -156,6 +153,12 @@ app.scss
   &.active {
     background: #fff;
     transform: scale(1.4);
+  }
+}
+
+@media (max-width: 900px) {
+  .right-rail {
+    display: none;
   }
 }
 
