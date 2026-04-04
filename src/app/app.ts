@@ -163,6 +163,37 @@ export class App {
     this.scrollToSection(this.activeIndex + direction);
   }
 
+  @HostListener('window:keydown', ['$event'])
+  protected onKeydown(event: KeyboardEvent): void {
+    if (this.isAnimatingScroll) {
+      return;
+    }
+
+    const target = event.target as HTMLElement | null;
+    const tagName = target?.tagName?.toLowerCase();
+
+    const isTypingField =
+      tagName === 'input' ||
+      tagName === 'textarea' ||
+      target?.isContentEditable;
+
+    if (isTypingField) {
+      return;
+    }
+
+    const key = event.key.toLowerCase();
+
+    if (key === 'arrowdown' || key === 's') {
+      event.preventDefault();
+      this.scrollToSection(this.activeIndex + 1);
+    }
+
+    if (key === 'arrowup' || key === 'w') {
+      event.preventDefault();
+      this.scrollToSection(this.activeIndex - 1);
+    }
+  }
+
   @HostListener('window:resize')
   protected onResize(): void {
     this.updateActiveSection();
