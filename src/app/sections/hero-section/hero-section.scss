@@ -3,8 +3,8 @@ hero-section.scss
 ========================= */
 
 :host {
-    background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-        url('https://cdn.pixabay.com/photo/2015/03/18/11/10/the-scenery-679134_960_720.jpg');
+    // background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
+    //     url('https://cdn.pixabay.com/photo/2015/03/18/11/10/the-scenery-679134_960_720.jpg');
     background-size: cover;
     background-position: center;
 }
