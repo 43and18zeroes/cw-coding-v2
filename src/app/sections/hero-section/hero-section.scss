@@ -11,10 +11,18 @@ hero-section.scss
 
 
 .fav-box {
+    margin-top: 100px;
+    margin-left: 100px;
     width: 512px;
     height: 512px;
     background: #141d2f;
-    color: white;
     display: flex;
     justify-content: center;
+    align-items: center;
+    
+    &__text {
+        color: white;
+        font-size: 260px;
+        font-weight: 900;
+    }
 }
