@@ -3,25 +3,8 @@ hero-section.scss
 ========================= */
 
 :host {
-    // background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-    //     url('https://cdn.pixabay.com/photo/2015/03/18/11/10/the-scenery-679134_960_720.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
+        url('https://cdn.pixabay.com/photo/2015/03/18/11/10/the-scenery-679134_960_720.jpg');
     background-size: cover;
     background-position: center;
-}
-
-
-.fav-box {
-    margin-top: 100px;
-    margin-left: 100px;
-    width: 512px;
-    height: 512px;
-    background: #141d2f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    &__text {
-        color: white;
-        font-size: 270px;
-    }
 }
