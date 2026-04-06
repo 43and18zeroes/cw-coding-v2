@@ -18,10 +18,12 @@ body {
   margin: 0;
   color: #FFF;
   font-family: Poppins;
+  background-color: #141d2f;
 }
 
 .snap-section-base {
   display: flex;
+  flex-direction: column;
   min-height: 100dvh;
   height: 100dvh;
   width: 100%;
@@ -29,4 +31,9 @@ body {
   scroll-snap-stop: always;
   isolation: isolate;
   position: relative;
+}
+
+.vertical-text {
+  display: inline-block;
+  transform: rotate(-90deg);
 }
