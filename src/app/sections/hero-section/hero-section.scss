@@ -6,15 +6,21 @@ hero-section.scss
     justify-content: flex-end;
 }
 
-.hero-text {
-    display: flex;
-    align-items: center;
+.hero {
+    img {
+        width: 300px;
+    }
 
-    div {
+    &__text {
+        display: flex;
+        align-items: center;
 
-        h1,
-        h2 {
-            margin: 0;
+        div {
+
+            h1,
+            h2 {
+                margin: 0;
+            }
         }
     }
 }
