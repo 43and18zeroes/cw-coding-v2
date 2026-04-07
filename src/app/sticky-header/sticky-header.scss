@@ -4,18 +4,17 @@
 
 /* Header & Layout */
 .header {
-  height: 80px;
+  height: 72px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding-left: 24px;
-  z-index: 100;
 }
 
 .logo {
   font-size: 35px;
   font-weight: 900;
+  padding: 0 24px;
 }
 
 /* Hamburger Icon Animation */
@@ -24,12 +23,12 @@
   border: none;
   cursor: pointer;
   z-index: 101;
-  padding: 16px 24px 16px 16px;
+  padding: 24px;
 }
 
 .hamburger-icon {
   width: 30px;
-  height: 20px;
+  height: 24px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -38,7 +37,7 @@
 
 .hamburger-icon span {
   display: block;
-  height: 3px;
+  height: 4px;
   width: 100%;
   background-color: var(--primary-color);
   border-radius: 3px;
@@ -47,7 +46,7 @@
 
 /* Transformation zum X */
 .menu-btn.open .hamburger-icon span:nth-child(1) {
-  transform: translateY(8.5px) rotate(45deg);
+  transform: translateY(11.5px) rotate(45deg);
 }
 
 .menu-btn.open .hamburger-icon span:nth-child(2) {

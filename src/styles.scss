@@ -2,10 +2,6 @@
 styles.scss
 ========================= */
 
-:root {
-  --primary-color: #fff;
-}
-
 @font-face {
   font-family: 'Poppins';
   src: url("/fonts/poppins/Poppins-Regular.ttf");
@@ -16,6 +12,14 @@ styles.scss
   font-style: normal;
   font-weight: 200;
   src: url("/fonts/material-design-icons/sykg-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190Fjzag.woff2");
+}
+
+:root {
+  --primary-color: #fff;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
