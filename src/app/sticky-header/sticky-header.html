@@ -2,7 +2,32 @@
 sticky-header.html
 ========================= -->
 
-<header class="top-header">
+<header class="header">
+  <a (click)="onNavigate(0)">Christoph</a>
+
+  <button class="menu-btn" (click)="toggleMenu()" [class.open]="isMenuOpen()">
+    <div class="hamburger-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+</header>
+
+<nav class="sidebar" [class.active]="isMenuOpen()">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Über uns</a></li>
+    <li><a href="#">Kontakt</a></li>
+  </ul>
+</nav>
+
+@if (isMenuOpen()) {
+  <div class="backdrop" (click)="toggleMenu()"></div>
+}
+
+<!-- <header class="top-header">
   <div class="header-inner">
     <button
       type="button"
@@ -71,4 +96,4 @@ sticky-header.html
       </button>
     }
   </nav>
-</aside>
+</aside> -->

@@ -12,18 +12,24 @@ export class StickyHeaderComponent {
 
   @Output() navigate = new EventEmitter<number>();
 
-  protected readonly menuOpen = signal(false);
+  isMenuOpen = signal(false);
 
-  protected toggleMenu(): void {
-    this.menuOpen.update(value => !value);
+  toggleMenu() {
+    this.isMenuOpen.update(val => !val);
   }
 
-  protected closeMenu(): void {
-    this.menuOpen.set(false);
-  }
+  // protected readonly menuOpen = signal(false);
+
+  // protected toggleMenu(): void {
+  //   this.menuOpen.update(value => !value);
+  // }
+
+  // protected closeMenu(): void {
+  //   this.menuOpen.set(false);
+  // }
 
   protected onNavigate(index: number): void {
     this.navigate.emit(index);
-    this.closeMenu();
+    // this.closeMenu();
   }
 }
