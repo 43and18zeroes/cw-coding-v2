@@ -2,25 +2,38 @@
 hero-section.scss
 ========================= */
 
-:host {
-    justify-content: flex-end;
-}
+.picture {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    background-image: url('/img/hero/photo-shadows.webp');
+    background-position: center;
+    background-size: cover;
 
-.hero {
     img {
-        width: 300px;
-    }
-
-    &__text {
-        display: flex;
-        align-items: center;
-
-        div {
-
-            h1,
-            h2 {
-                margin: 0;
-            }
-        }
+        width: 90%;
     }
 }
+
+// :host {
+//     justify-content: flex-end;
+// }
+
+// .hero {
+//     img {
+//         width: 300px;
+//     }
+
+//     &__text {
+//         display: flex;
+//         align-items: center;
+
+//         div {
+
+//             h1,
+//             h2 {
+//                 margin: 0;
+//             }
+//         }
+//     }
+// }
