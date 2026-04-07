@@ -4,14 +4,18 @@
 
 /* Header & Layout */
 .header {
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: relative;
+  padding-left: 24px;
   z-index: 100;
+}
+
+.logo {
+  font-size: 35px;
+  font-weight: 900;
 }
 
 /* Hamburger Icon Animation */
@@ -20,7 +24,7 @@
   border: none;
   cursor: pointer;
   z-index: 101;
-  padding: 10px;
+  padding: 16px 24px 16px 16px;
 }
 
 .hamburger-icon {
