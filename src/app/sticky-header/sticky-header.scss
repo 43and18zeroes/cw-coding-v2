@@ -11,7 +11,7 @@
 .logo {
   font-size: 35px;
   font-weight: 900;
-  padding: 8px 0 0 16px;
+  padding: calc(var(--padding) / 2) 0 0 var(--padding);
 }
 
 /* Hamburger Icon Animation */
@@ -20,7 +20,7 @@
   border: none;
   cursor: pointer;
   z-index: 101;
-  padding: 16px;
+  padding: var(--padding);
 }
 
 .hamburger-icon {
