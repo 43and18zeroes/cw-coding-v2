@@ -4,7 +4,9 @@ styles.scss
 
 @font-face {
   font-family: 'Poppins';
-  src: url("/fonts/poppins/Poppins-Regular.ttf");
+  src:
+    url('/fonts/poppins/poppins-v24-latin-300.woff2') format('woff2'),
+    url('/fonts/poppins/poppins-v24-latin-300.woff') format('woff');
 }
 
 @font-face {
