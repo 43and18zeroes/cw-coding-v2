@@ -3,6 +3,12 @@
 ========================= */
 
 /* Header & Layout */
+
+:host {
+  display: block;
+  background-color: transparent;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
