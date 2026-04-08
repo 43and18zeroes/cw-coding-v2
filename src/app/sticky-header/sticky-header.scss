@@ -5,8 +5,13 @@
 /* Header & Layout */
 
 :host {
+  position: fixed;
   display: block;
-  background-color: transparent;
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
 }
 
 .header {
