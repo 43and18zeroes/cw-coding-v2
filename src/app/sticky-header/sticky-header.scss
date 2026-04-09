@@ -17,14 +17,13 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: var(--padding);
+  padding: var(--padding) 0;
 }
 
 .logo {
   font-size: 35px;
   font-weight: 900;
-  padding-left: var(--padding);
-  padding-left: calc(var(--padding) * 2);
+  padding: calc(var(--padding) / 4) 0 0 calc(var(--padding) * 2);
 }
 
 /* Hamburger Icon Animation */
