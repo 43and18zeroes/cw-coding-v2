@@ -17,13 +17,14 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: calc(var(--padding) / 2);
+  padding: var(--padding);
 }
 
 .logo {
   font-size: 35px;
   font-weight: 900;
   padding-left: var(--padding);
+  padding-left: calc(var(--padding) * 2);
 }
 
 /* Hamburger Icon Animation */
@@ -32,7 +33,7 @@
   border: none;
   cursor: pointer;
   z-index: 101;
-  padding: var(--padding);
+  padding: calc(var(--padding) * 2);
 }
 
 .hamburger-icon {
