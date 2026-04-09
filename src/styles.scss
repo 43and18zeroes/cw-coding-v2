@@ -32,15 +32,17 @@ body {
 }
 
 .snap-section-base {
+  --header-height: 72px;
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;
-  height: 100dvh;
+  min-height: calc(100dvh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
   width: 100%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   isolation: isolate;
   position: relative;
+  padding-top: var(--header-height);
 }
 
 .vertical-text {
