@@ -70,34 +70,34 @@
 /* Sidebar Navigation */
 .sidebar {
   position: fixed;
-  top: 0;
-  left: -300px;
+  top: 72px;
+  right: -300px;
   /* Startet außerhalb des Bildes */
   width: 300px;
   height: 100vh;
-  background: #333;
-  color: white;
-  padding-top: 80px;
+  background: rgba(0, 0, 0, 0.7);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 99;
 }
 
 .sidebar.active {
-  transform: translateX(300px);
+  transform: translateX(-300px);
   /* Gleitet rein */
 }
 
 .sidebar ul {
   list-style: none;
-  padding: 2rem;
+  padding: 0;
+  margin: 0;
+  padding: 16px;
 }
 
 .sidebar ul li a {
-  color: white;
+  color: var(--primary-color);
   text-decoration: none;
-  font-size: 1.5rem;
-  display: block;
-  margin-bottom: 1rem;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 16px;
 }
 
 /* Backdrop */

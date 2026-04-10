@@ -18,18 +18,7 @@ export class StickyHeaderComponent {
     this.isMenuOpen.update(val => !val);
   }
 
-  // protected readonly menuOpen = signal(false);
-
-  // protected toggleMenu(): void {
-  //   this.menuOpen.update(value => !value);
-  // }
-
-  // protected closeMenu(): void {
-  //   this.menuOpen.set(false);
-  // }
-
   protected onNavigate(index: number): void {
     this.navigate.emit(index);
-    // this.closeMenu();
   }
 }
