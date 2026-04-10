@@ -19,6 +19,7 @@ export class StickyHeaderComponent {
   }
 
   protected onNavigate(index: number): void {
+    this.isMenuOpen.set(false);
     this.navigate.emit(index);
   }
 }
