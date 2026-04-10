@@ -16,10 +16,10 @@ sticky-header.html
 
 <nav class="sidebar" [class.active]="isMenuOpen()">
   <ul>
-    <li><a (click)="onNavigate(1)">About me</a></li>
-    <li><a (click)="onNavigate(2)">My skills</a></li>
-    <li><a (click)="onNavigate(3)">Portfolio</a></li>
-    <li><a (click)="onNavigate(4)">Contact</a></li>
+    <li (click)="onNavigate(1)">About me</li>
+    <li (click)="onNavigate(2)">My skills</li>
+    <li (click)="onNavigate(3)">Portfolio</li>
+    <li (click)="onNavigate(4)">Contact</li>
   </ul>
 </nav>
 

@@ -2,8 +2,6 @@
    sticky-header.scss
 ========================= */
 
-/* Header & Layout */
-
 :host {
   position: fixed;
   display: block;
@@ -24,9 +22,9 @@
   font-size: 35px;
   font-weight: 900;
   padding: calc(var(--padding) / 4) 0 0 calc(var(--padding) * 2);
+  cursor: pointer;
 }
 
-/* Hamburger Icon Animation */
 .menu-btn {
   background: none;
   border: none;
@@ -53,7 +51,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* Transformation zum X */
 .menu-btn.open .hamburger-icon span:nth-child(1) {
   transform: translateY(11.5px) rotate(45deg);
 }
@@ -66,14 +63,15 @@
   transform: translateY(-8.5px) rotate(-45deg);
 }
 
-/* Sidebar Navigation */
 .sidebar {
   position: fixed;
   top: 72px;
   right: -100vw;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 99;
 }
@@ -86,10 +84,10 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  padding: 16px;
+  padding: 32px 16px;
 }
 
-.sidebar ul li a {
+.sidebar ul li {
   color: var(--primary-color);
   text-decoration: none;
   font-size: 30px;
@@ -98,7 +96,6 @@
   cursor: pointer;
 }
 
-/* Backdrop */
 .backdrop {
   position: fixed;
   top: 0;
