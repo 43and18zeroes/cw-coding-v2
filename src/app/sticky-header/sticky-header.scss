@@ -72,7 +72,6 @@
   position: fixed;
   top: 72px;
   right: -300px;
-  /* Startet außerhalb des Bildes */
   width: 300px;
   height: 100vh;
   background: rgba(0, 0, 0, 0.7);
@@ -82,7 +81,6 @@
 
 .sidebar.active {
   transform: translateX(-300px);
-  /* Gleitet rein */
 }
 
 .sidebar ul {
