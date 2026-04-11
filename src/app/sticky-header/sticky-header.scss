@@ -7,8 +7,6 @@
   display: block;
   width: 100%;
   background: rgba(255, 255, 255, 0);
-  // backdrop-filter: blur(2px);
-  // -webkit-backdrop-filter: blur(2px);
   z-index: 1000;
 }
 
@@ -84,7 +82,6 @@
 
 .sidebar ul {
   list-style: none;
-  padding: 0;
   margin: 0;
   padding: 32px 16px;
 }
@@ -106,4 +103,12 @@
   height: 100vh;
   background: rgba(0, 0, 0, 0);
   z-index: 98;
+}
+
+@media (min-width: 600px) {
+  .menu-btn,
+  .sidebar,
+  .backgrop {
+    display: none;
+  }
 }
