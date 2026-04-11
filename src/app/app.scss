@@ -84,21 +84,6 @@ app.scss
   transition:
     opacity 320ms ease 140ms,
     transform 520ms cubic-bezier(0.22, 1, 0.36, 1) 140ms;
-
-  h2 {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-  }
-
-  p {
-    max-width: 280px;
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.6);
-  }
 }
 
 .page-shell {
