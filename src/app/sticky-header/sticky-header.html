@@ -5,13 +5,21 @@ sticky-header.html
 <header class="header">
   <a class="logo" (click)="onNavigate(0)">Christoph</a>
 
-  <button class="menu-btn" (click)="toggleMenu()" [class.open]="isMenuOpen()">
+  <button class="menu-btn" (click)="toggleMenu()"
+    [class.open]="isMenuOpen()">
     <div class="hamburger-icon">
       <span></span>
       <span></span>
       <span></span>
     </div>
   </button>
+
+  <div class="menu-desktop">
+    <a (click)="onNavigate(1)">About me</a>
+    <a (click)="onNavigate(2)">My skills</a>
+    <a (click)="onNavigate(3)">Portfolio</a>
+    <a (click)="onNavigate(4)">Contact</a>
+  </div>
 </header>
 
 <nav class="sidebar" [class.active]="isMenuOpen()">
@@ -24,5 +32,5 @@ sticky-header.html
 </nav>
 
 @if (isMenuOpen()) {
-  <div class="backdrop" (click)="toggleMenu()"></div>
+<div class="backdrop" (click)="toggleMenu()"></div>
 }
