@@ -5,52 +5,27 @@ app.html
 <app-portrait-lock-component></app-portrait-lock-component>
 
 <div class="page-shell">
-  <app-sticky-header
-    [sections]="sections"
+  <app-sticky-header [sections]="sections"
     [activeSectionId]="sections[activeIndex()].id"
     (navigate)="scrollToSectionById($event)">
   </app-sticky-header>
 
   <nav class="right-rail" aria-label="Section navigation">
-    @for (section of sections; track section.id; let i = $index) {
-      <button
-        type="button"
-        class="dot"
-        [class.active]="activeIndex() === i"
-        (click)="scrollToSection(i)">
-      </button>
+    @for (section of sections; track section.id; let i =
+    $index) {
+    <button type="button" class="dot"
+      [class.active]="activeIndex() === i"
+      (click)="scrollToSection(i)">
+    </button>
     }
   </nav>
 
-  <main #scroller class="snap-container" (scroll)="onScroll()">
-    <app-hero-section
-      [class.active]="activeIndex() === 0"
-      (next)="scrollToSection(1)">
-    </app-hero-section>
-
-    <app-about-me-section
-      [class.active]="activeIndex() === 1"
-      (next)="scrollToSection(2)">
-    </app-about-me-section>
-
-    <app-skills-section
-      [class.active]="activeIndex() === 2"
-      (next)="scrollToSection(3)">
-    </app-skills-section>
-
-    <app-portfolio-section-00
-      [class.active]="activeIndex() === 3"
-      (next)="scrollToSection(4)">
-    </app-portfolio-section-00>
-
-    <app-portfolio-section-01
-      [class.active]="activeIndex() === 4"
-      (next)="scrollToSection(5)">
-    </app-portfolio-section-01>
-
-    <app-contact-section
-      [class.active]="activeIndex() === 5"
-      (next)="scrollToSection(0)">
-    </app-contact-section>
+  <main #scroller class="snap-container"
+    (scroll)="onScroll()">
+    @for (section of sections; track section.id; let i =
+    $index) {
+    <ng-container
+      *ngComponentOutlet="section.component"></ng-container>
+    }
   </main>
 </div>

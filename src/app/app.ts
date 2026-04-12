@@ -2,6 +2,7 @@ import {
   Component,
   ElementRef,
   HostListener,
+  Type,
   ViewChild,
   signal
 } from '@angular/core';
@@ -13,17 +14,19 @@ import { PortfolioSection01 } from "./sections/portfolio-section-01/portfolio-se
 import { ContactSection } from "./sections/contact-section/contact-section";
 import { StickyHeaderComponent } from './components/sticky-header/sticky-header';
 import { PortraitLockComponent } from './components/portrait-lock-component/portrait-lock-component';
+import { NgComponentOutlet } from '@angular/common';
+
+type SectionItem = {
+  id: string;
+  title: string;
+  component: Type<unknown>;
+};
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    HeroSection,
-    AboutMeSection,
-    SkillsSection,
-    PortfolioSection00,
-    PortfolioSection01,
-    ContactSection,
+    NgComponentOutlet,
     StickyHeaderComponent,
     PortraitLockComponent
   ],
@@ -35,13 +38,13 @@ export class App {
 
   protected readonly activeIndex = signal(0);
 
-  protected readonly sections = [
-    { id: 'hero', title: 'Start' },
-    { id: 'about', title: 'About me' },
-    { id: 'skills', title: 'Skills' },
-    { id: 'portfolio-1', title: 'Portfolio 01' },
-    { id: 'portfolio-2', title: 'Portfolio 02' },
-    { id: 'contact', title: 'Contact' }
+  protected readonly sections: SectionItem[] = [
+    { id: 'hero', title: 'Start', component: HeroSection },
+    { id: 'about', title: 'About me', component: AboutMeSection },
+    { id: 'skills', title: 'Skills', component: SkillsSection },
+    { id: 'portfolio-1', title: 'Portfolio 01', component: PortfolioSection00 },
+    { id: 'portfolio-2', title: 'Portfolio 02', component: PortfolioSection01 },
+    { id: 'contact', title: 'Contact', component: ContactSection }
   ];
 
   private readonly WHEEL_SCROLL_THRESHOLD = 30;
