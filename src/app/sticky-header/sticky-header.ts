@@ -8,9 +8,9 @@ import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
 })
 export class StickyHeaderComponent {
   @Input({ required: true }) sections: { id: string; title: string }[] = [];
-  @Input({ required: true }) activeIndex = 0;
+  @Input() activeSectionId = '';
 
-  @Output() navigate = new EventEmitter<number>();
+  @Output() navigate = new EventEmitter<string>();
 
   isMenuOpen = signal(false);
 
@@ -18,8 +18,8 @@ export class StickyHeaderComponent {
     this.isMenuOpen.update(val => !val);
   }
 
-  protected onNavigate(index: number): void {
+  protected onNavigate(sectionId: string): void {
     this.isMenuOpen.set(false);
-    this.navigate.emit(index);
+    this.navigate.emit(sectionId);
   }
 }

@@ -3,7 +3,7 @@ sticky-header.html
 ========================= -->
 
 <header class="header">
-  <a class="logo" (click)="onNavigate(0)">Christoph</a>
+  <a class="logo" (click)="onNavigate('top')">Christoph</a>
 
   <button class="menu-btn" (click)="toggleMenu()"
     [class.open]="isMenuOpen()">
@@ -15,19 +15,21 @@ sticky-header.html
   </button>
 
   <div class="menu-desktop">
-    <a (click)="onNavigate(1)">About me</a>
-    <a (click)="onNavigate(2)">My skills</a>
-    <a (click)="onNavigate(3)">Portfolio</a>
-    <a (click)="onNavigate(4)">Contact</a>
+    @for (section of sections; track section.id) {
+    <a (click)="onNavigate(section.id)">
+      {{ section.title }}
+    </a>
+    }
   </div>
 </header>
 
 <nav class="sidebar" [class.active]="isMenuOpen()">
   <ul>
-    <li (click)="onNavigate(1)">About me</li>
-    <li (click)="onNavigate(2)">My skills</li>
-    <li (click)="onNavigate(3)">Portfolio</li>
-    <li (click)="onNavigate(4)">Contact</li>
+    @for (section of sections; track section.id) {
+    <li (click)="onNavigate(section.id)">
+      {{ section.title }}
+    </li>
+    }
   </ul>
 </nav>
 

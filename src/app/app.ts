@@ -34,7 +34,7 @@ export class App {
   protected readonly activeIndex = signal(0);
 
   protected readonly sections = [
-    { id: 'hero', title: 'Hero' },
+    { id: 'hero', title: 'Start' },
     { id: 'about', title: 'About me' },
     { id: 'skills', title: 'Skills' },
     { id: 'portfolio-1', title: 'Portfolio 01' },
@@ -85,6 +85,19 @@ export class App {
       this.isAnimatingScroll = false;
       this.updateActiveSection();
     }, this.SCROLL_ANIMATION_MS);
+  }
+
+  protected scrollToSectionById(sectionId: string): void {
+    if (sectionId === 'top' || sectionId === 'hero') {
+      this.scrollToSection(0);
+      return;
+    }
+
+    const index = this.sections.findIndex(section => section.id === sectionId);
+
+    if (index !== -1) {
+      this.scrollToSection(index);
+    }
   }
 
   @HostListener('wheel', ['$event'])

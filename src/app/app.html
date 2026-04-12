@@ -21,8 +21,8 @@ app.html
 
 <div class="page-shell">
     <app-sticky-header [sections]="sections"
-        [activeIndex]="activeIndex()"
-        (navigate)="scrollToSection($event)">
+        [activeSectionId]="sections[activeIndex()].id"
+        (navigate)="scrollToSectionById($event)">
     </app-sticky-header>
 
     <nav class="right-rail" aria-label="Section navigation">
