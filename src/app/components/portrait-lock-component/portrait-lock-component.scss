@@ -1,0 +1,109 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: block;
+  pointer-events: none;
+}
+
+.portrait-lock {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.lock-icon {
+  position: relative;
+  z-index: 2;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(10px) scale(0.96);
+  transition:
+    opacity 320ms ease 80ms,
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1) 80ms;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: #fff;
+    transform-origin: center;
+    animation: device-tilt 2.6s infinite cubic-bezier(0.65, 0, 0.35, 1);
+  }
+}
+
+.lock-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 320ms ease 140ms,
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1) 140ms;
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  :host {
+    pointer-events: auto;
+  }
+
+  .portrait-lock {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: scale(1);
+    transition:
+      opacity 320ms ease,
+      transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0s linear 0s;
+  }
+
+  .lock-icon {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .lock-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes device-tilt {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1) translateY(0);
+  }
+
+  18% {
+    transform: rotate(-8deg) scale(0.98) translateY(1px);
+  }
+
+  42% {
+    transform: rotate(-90deg) scale(1.04) translateY(0);
+  }
+
+  58% {
+    transform: rotate(-90deg) scale(1.04) translateY(0);
+  }
+
+  74% {
+    transform: rotate(-82deg) scale(1.01) translateY(-1px);
+  }
+}

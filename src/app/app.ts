@@ -12,6 +12,7 @@ import { PortfolioSection00 } from "./sections/portfolio-section-00/portfolio-se
 import { PortfolioSection01 } from "./sections/portfolio-section-01/portfolio-section-01";
 import { ContactSection } from "./sections/contact-section/contact-section";
 import { StickyHeaderComponent } from './components/sticky-header/sticky-header';
+import { PortraitLockComponent } from './components/portrait-lock-component/portrait-lock-component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ import { StickyHeaderComponent } from './components/sticky-header/sticky-header'
     PortfolioSection00,
     PortfolioSection01,
     ContactSection,
-    StickyHeaderComponent
+    StickyHeaderComponent,
+    PortraitLockComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
