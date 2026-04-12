@@ -8,6 +8,8 @@
   width: 100%;
   background: rgba(255, 255, 255, 0);
   z-index: 1000;
+    backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .header {
@@ -76,8 +78,6 @@
   background: rgba(0, 0, 0, 0.75);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 99;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
 }
 
 .sidebar.active {
