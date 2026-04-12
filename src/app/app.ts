@@ -11,7 +11,7 @@ import { SkillsSection } from "./sections/skills-section/skills-section";
 import { PortfolioSection00 } from "./sections/portfolio-section-00/portfolio-section-00";
 import { PortfolioSection01 } from "./sections/portfolio-section-01/portfolio-section-01";
 import { ContactSection } from "./sections/contact-section/contact-section";
-import { StickyHeaderComponent } from './sticky-header/sticky-header';
+import { StickyHeaderComponent } from './components/sticky-header/sticky-header';
 
 @Component({
   selector: 'app-root',

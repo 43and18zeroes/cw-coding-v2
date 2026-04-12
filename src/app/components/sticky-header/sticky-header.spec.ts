@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StickyHeader } from './sticky-header';
+import { StickyHeaderComponent } from './sticky-header';
 
-describe('StickyHeader', () => {
-  let component: StickyHeader;
-  let fixture: ComponentFixture<StickyHeader>;
+describe('StickyHeaderComponent', () => {
+  let component: StickyHeaderComponent;
+  let fixture: ComponentFixture<StickyHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StickyHeader],
+      imports: [StickyHeaderComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(StickyHeader);
+    fixture = TestBed.createComponent(StickyHeaderComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
