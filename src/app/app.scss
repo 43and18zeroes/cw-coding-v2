@@ -29,7 +29,7 @@ app.scss
   overscroll-behavior-y: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  background-color: #141d2f;
+  background-color: var(--main-bg-color);
 
   &::-webkit-scrollbar {
     display: none;

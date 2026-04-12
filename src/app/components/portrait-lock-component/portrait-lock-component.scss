@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+  background-color: var(--main-bg-color);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
