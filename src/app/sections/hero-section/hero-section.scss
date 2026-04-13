@@ -11,13 +11,14 @@ hero-section.scss
     background-position: center;
     background-size: cover;
 
-    &__christoph {
-        width: 100%;
-    }
+}
 
-    &__arch {
-        width: 100%;
-        position: absolute;
-        bottom: -166px;
-    }
+.img-christoph {
+    width: 100%;
+}
+
+.img-arch {
+    width: 100%;
+    position: absolute;
+    bottom: -158px;
 }
