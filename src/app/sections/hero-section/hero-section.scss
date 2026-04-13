@@ -6,7 +6,7 @@ hero-section.scss
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     background-image: url('/img/hero/photo-shadows.webp');
     background-position: center;
     background-size: cover;
@@ -14,11 +14,39 @@ hero-section.scss
 }
 
 .img-christoph {
-    width: 100%;
+    width: 90%;
 }
 
 .img-arch {
     width: 100%;
     position: absolute;
     bottom: -158px;
+}
+
+@media (min-width: 400px) {
+
+    .img-arch {
+        bottom: -180px;
+    }
+}
+
+@media (min-width: 450px) {
+
+    .img-arch {
+        bottom: -205px;
+    }
+}
+
+@media (min-width: 500px) {
+
+    .img-arch {
+        bottom: -228px;
+    }
+}
+
+@media (min-width: 550px) {
+
+    .img-arch {
+        bottom: -252px;
+    }
 }
