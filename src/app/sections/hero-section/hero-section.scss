@@ -3,6 +3,7 @@ hero-section.scss
 ========================= */
 
 .picture {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,5 +17,7 @@ hero-section.scss
 
     .img-arch {
         width: 100%;
+        position: absolute;
+        bottom: -166px;
     }
 }
