@@ -4,12 +4,17 @@ hero-section.scss
 
 .picture {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     background-image: url('/img/hero/photo-shadows.webp');
     background-position: center;
     background-size: cover;
 
-    img {
+    .img-christoph {
+        width: 100%;
+    }
+
+    .img-arch {
         width: 100%;
     }
 }
