@@ -6,16 +6,27 @@
   position: fixed;
   display: block;
   width: 100%;
-  background: rgba(255, 255, 255, 0);
   z-index: 1000;
-    backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   padding: var(--padding) 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    bottom: -20px;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: -1;
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
 }
 
 .logo {
@@ -75,7 +86,9 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 99;
 }
