@@ -26,11 +26,23 @@ hero-section.scss
     position: absolute;
     bottom: -46vw;
     display: flex;
+    position: absolute;
+    bottom: -46vw;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    margin-right: 12px;
 }
 
 .i-am {
-    // width: 10px;
-    // height: 10px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin-bottom: 8px;
+    font-size: 2em;
 }
 
 // ──────────────────────────────────────────────
