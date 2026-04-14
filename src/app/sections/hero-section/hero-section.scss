@@ -10,7 +10,6 @@ hero-section.scss
     background-image: url('/img/hero/photo-shadows.webp');
     background-position: center;
     background-size: cover;
-
 }
 
 .img-christoph {
@@ -20,33 +19,11 @@ hero-section.scss
 .img-arch {
     width: 100%;
     position: absolute;
-    bottom: -158px;
+    bottom: -46vw;
 }
 
-@media (min-width: 400px) {
-
+@supports (-webkit-touch-callout: none) {
     .img-arch {
-        bottom: -180px;
-    }
-}
-
-@media (min-width: 450px) {
-
-    .img-arch {
-        bottom: -205px;
-    }
-}
-
-@media (min-width: 500px) {
-
-    .img-arch {
-        bottom: -228px;
-    }
-}
-
-@media (min-width: 550px) {
-
-    .img-arch {
-        bottom: -252px;
+        bottom: -46vw;
     }
 }
