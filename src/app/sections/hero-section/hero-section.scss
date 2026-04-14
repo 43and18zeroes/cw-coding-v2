@@ -41,8 +41,24 @@ hero-section.scss
 .i-am {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    margin-bottom: 8px;
-    font-size: 2em;
+    font-size: 7vw;
+    line-height: 0.75;
+}
+
+.content {
+    * {
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 8vw;
+    }
+
+    h2 {
+        font-size: 7.1vw;
+        color: var(--accent-color);
+        font-weight: 300;
+    }
 }
 
 // ──────────────────────────────────────────────
