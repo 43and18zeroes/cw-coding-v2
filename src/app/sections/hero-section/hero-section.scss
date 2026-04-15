@@ -71,6 +71,17 @@ hero-section.scss
     }
 }
 
+.socials {
+    display: flex;
+    gap: 42px;
+
+    svg {
+        --svg-size: 30px;
+        width: var(--svg-size);
+        height: var(--svg-size);
+    }
+}
+
 // ──────────────────────────────────────────────
 // VARIABLES
 // ──────────────────────────────────────────────
