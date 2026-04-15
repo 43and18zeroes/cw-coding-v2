@@ -24,9 +24,8 @@ hero-section.scss
 }
 
 .text-hero {
-    position: absolute;
     display: flex;
-    bottom: -70px;
+    justify-content: center;
 }
 
 .left {
@@ -42,6 +41,10 @@ hero-section.scss
     transform: rotate(180deg);
     font-size: 28px;
     line-height: 0.75;
+}
+
+.hero-body {
+    z-index: 1000;
 }
 
 .content {
