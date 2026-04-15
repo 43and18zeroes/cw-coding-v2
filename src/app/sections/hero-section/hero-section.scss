@@ -24,24 +24,22 @@ hero-section.scss
 
 .text-hero {
     position: absolute;
-    bottom: -46vw;
     display: flex;
-    position: absolute;
-    bottom: -46vw;
+    bottom: -27vw;
 }
 
 .left {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    margin-bottom: 20px;
-    margin-right: 12px;
+    margin-bottom: 9px;
+    margin-right: 9px;
 }
 
 .i-am {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    font-size: 7vw;
+    font-size: 8vw;
     line-height: 0.75;
 }
 
