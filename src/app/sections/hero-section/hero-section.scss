@@ -13,19 +13,20 @@ hero-section.scss
 }
 
 .img-christoph {
-    width: 90%;
+    width: 80%;
+    margin-top: -20px;
 }
 
 .img-arch {
     position: absolute;
     width: 100%;
-    bottom: -46vw;
+    bottom: -40vw;
 }
 
 .text-hero {
     position: absolute;
     display: flex;
-    bottom: -27vw;
+    bottom: -20vw;
 }
 
 .left {
@@ -39,7 +40,7 @@ hero-section.scss
 .i-am {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    font-size: 8vw;
+    font-size: 7.5vw;
     line-height: 0.75;
 }
 
@@ -56,6 +57,7 @@ hero-section.scss
         font-size: 7.1vw;
         color: var(--accent-color);
         font-weight: 300;
+        margin-top: -7px;
     }
 }
 
