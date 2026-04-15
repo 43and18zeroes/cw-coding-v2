@@ -23,9 +23,15 @@ hero-section.scss
     bottom: -40vw;
 }
 
+.hero-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .text-hero {
     display: flex;
-    justify-content: center;
 }
 
 .left {
