@@ -24,6 +24,7 @@ hero-section.scss
 }
 
 .hero-body {
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -47,10 +48,6 @@ hero-section.scss
     transform: rotate(180deg);
     font-size: 28px;
     line-height: 0.75;
-}
-
-.hero-body {
-    z-index: 1000;
 }
 
 .content {
