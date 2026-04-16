@@ -75,8 +75,8 @@ hero-section.scss
     justify-content: center;
     gap: 42px;
     position: relative;
-    margin-bottom: 16px;
-    
+    margin: 8px 0 16px 0;
+
     .decorative-line {
         left: -2px;
         top: 50%;
@@ -84,10 +84,14 @@ hero-section.scss
         width: 66px;
     }
 
-    svg {
-        --svg-size: 30px;
-        width: var(--svg-size);
-        height: var(--svg-size);
+    a {
+        text-decoration: none;
+        display: flex;
+        svg {
+            --svg-size: 30px;
+            width: var(--svg-size);
+            height: var(--svg-size);
+        }
     }
 }
 
