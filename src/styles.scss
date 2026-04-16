@@ -107,3 +107,10 @@ body {
 .primary-btn:hover::before {
   left: 130%;
 }
+
+.decorative-line {
+  position: absolute;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}

@@ -29,6 +29,7 @@ hero-section.scss
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    flex: 1;
 }
 
 .text-hero {
@@ -69,8 +70,19 @@ hero-section.scss
 }
 
 .socials {
+    width: 100%;
     display: flex;
+    justify-content: center;
     gap: 42px;
+    position: relative;
+    margin-bottom: 16px;
+    
+    .decorative-line {
+        left: -2px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 66px;
+    }
 
     svg {
         --svg-size: 30px;
