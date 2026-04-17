@@ -7,20 +7,28 @@ hero-section.scss
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('/img/hero/photo-shadows.webp');
     background-position: center;
     background-size: cover;
+}
+
+.img-shadow {
+    position: absolute;
+    width: 400px;
+    top: -25px;
 }
 
 .img-christoph {
     width: 300px;
     margin-top: -20px;
+    z-index: 10;
+
 }
 
 .img-arch {
     position: absolute;
     width: 100%;
     bottom: -40vw;
+    z-index: 20;
 
     @media (min-width: 400px) {
         bottom: -44vw;
