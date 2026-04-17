@@ -57,8 +57,8 @@ export class App {
     { id: 'hero', title: 'Start', component: HeroSection },
     { id: 'about', title: 'About me', component: AboutMeSection },
     { id: 'skills', title: 'Skills', component: SkillsSection },
-    { id: 'portfolio-1', title: 'Portfolio 01', component: PortfolioSection00 },
-    { id: 'portfolio-2', title: 'Portfolio 02', component: PortfolioSection01 },
+    { id: 'portfolio-1', title: 'Portfolio', component: PortfolioSection00 },
+    { id: 'portfolio-2', title: 'Portfolio', component: PortfolioSection01 },
     { id: 'contact', title: 'Contact', component: ContactSection }
   ];
 
