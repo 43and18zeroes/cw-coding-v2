@@ -4,6 +4,8 @@ import {
   HostListener,
   Type,
   ViewChild,
+  effect,
+  inject,
   signal
 } from '@angular/core';
 import { HeroSection } from "./sections/hero-section/hero-section";
@@ -15,6 +17,7 @@ import { ContactSection } from "./sections/contact-section/contact-section";
 import { StickyHeaderComponent } from './components/sticky-header/sticky-header';
 import { PortraitLockComponent } from './components/portrait-lock-component/portrait-lock-component';
 import { NgComponentOutlet } from '@angular/common';
+import { NavigationService } from './services/navigation-service';
 
 type SectionItem = {
   id: string;
@@ -34,6 +37,18 @@ type SectionItem = {
   styleUrl: './app.scss'
 })
 export class App {
+  private nav = inject(NavigationService);
+
+  constructor() {
+    effect(() => {
+      const id = this.nav.targetSectionId();
+      if (id) {
+        this.scrollToSectionById(id);
+        this.nav.targetSectionId.set(null); // reset
+      }
+    });
+  }
+
   @ViewChild('scroller', { static: true }) scrollerRef!: ElementRef<HTMLElement>;
 
   protected readonly activeIndex = signal(0);
