@@ -15,7 +15,7 @@ sticky-header.html
   </button>
 
   <div class="menu-desktop">
-    @for (section of sections; track section.id) {
+    @for (section of visibleSections; track section.id) {
     <a (click)="onNavigate(section.id)">
       {{ section.title }}
     </a>
@@ -25,7 +25,7 @@ sticky-header.html
 
 <nav class="sidebar" [class.active]="isMenuOpen()">
   <ul>
-    @for (section of sections; track section.id) {
+    @for (section of visibleSections; track section.id) {
     <li (click)="onNavigate(section.id)">
       {{ section.title }}
     </li>

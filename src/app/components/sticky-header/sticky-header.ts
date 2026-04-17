@@ -12,6 +12,12 @@ export class StickyHeaderComponent {
 
   @Output() navigate = new EventEmitter<string>();
 
+  private readonly HIDDEN_IDS = new Set(['hero', 'portfolio-2']);
+
+  get visibleSections() {
+    return this.sections.filter(s => !this.HIDDEN_IDS.has(s.id));
+  }
+
   isMenuOpen = signal(false);
 
   toggleMenu() {
