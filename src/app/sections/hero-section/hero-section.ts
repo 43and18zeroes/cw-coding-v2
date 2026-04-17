@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, input, Output, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { NavigationService } from '../../services/navigation-service';
 
 @Component({
