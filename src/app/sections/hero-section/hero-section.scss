@@ -21,6 +21,14 @@ hero-section.scss
     position: absolute;
     width: 100%;
     bottom: -40vw;
+
+    @media (min-width: 400px) {
+        bottom: -44vw;
+    }
+
+    @media (min-width: 450px) {
+        bottom: -45vw;
+    }
 }
 
 .hero-body {
@@ -87,6 +95,7 @@ hero-section.scss
     a {
         text-decoration: none;
         display: flex;
+
         svg {
             --svg-size: 30px;
             width: var(--svg-size);
