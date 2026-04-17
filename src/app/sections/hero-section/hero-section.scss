@@ -38,6 +38,14 @@ hero-section.scss
     justify-content: space-between;
     align-items: center;
     flex: 1;
+
+    @media (min-height: 700px) {
+        padding-top: 5vh;
+    }
+
+    @media (min-height: 750px) {
+        padding-top: 8vh;
+    }
 }
 
 .text-hero {
