@@ -3,18 +3,28 @@ hero-section.scss
 ========================= */
 
 .hero-container {
-    position: relative;
+    @media (min-width: 600px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.img-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-position: center;
-    background-size: cover;
+    position: relative;
 }
 
 .img-shadow {
     position: absolute;
     width: 400px;
     top: -25px;
+
+    @media (min-width: 600px) {
+        width: 600px;
+    }
 }
 
 .img-christoph {
@@ -22,6 +32,13 @@ hero-section.scss
     margin-top: -20px;
     z-index: 10;
 
+    @media (min-width: 600px) {
+        width: 450px;
+    }
+
+    @media (min-width: 900px) {
+        width: 614px;
+    }
 }
 
 .img-arch {
@@ -58,6 +75,19 @@ hero-section.scss
 
 .text-hero {
     display: flex;
+
+    &__desktop {
+        display: none;
+
+        @media (min-width: 600px) {
+            position: absolute;
+            z-index: 10;
+            display: flex;
+            justify-content: flex-end;
+            height: fit-content;
+            width: 80%;
+        }
+    }
 }
 
 .left {

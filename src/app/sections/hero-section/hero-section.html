@@ -3,12 +3,22 @@ hero-section.html
 ========================= -->
 
 <div class="hero-container">
-  <img class="img-shadow"
-    src="/img/hero/photo-shadows.webp" alt="Shadow">
-  <img class="img-christoph"
-    src="/img/hero/christoph-705.webp" alt="Christoph">
-  <img class="img-arch" src="/img/hero/header-vector.webp"
-    alt="Arch">
+  <div class="img-container"> <img class="img-shadow"
+      src="/img/hero/photo-shadows.webp" alt="Shadow">
+    <img class="img-christoph"
+      src="/img/hero/christoph-705.webp" alt="Christoph">
+    <img class="img-arch" src="/img/hero/header-vector.webp"
+      alt="Arch">
+  </div>
+  <div class="text-hero__desktop">
+    <div class="left">
+      <span class="i-am">I am</span>
+    </div>
+    <div class="content">
+      <h1>Christoph Wagner</h1>
+      <h2>Fullstack Developer</h2>
+    </div>
+  </div>
 </div>
 <div class="hero-body">
   <div class="text-hero">
@@ -20,7 +30,8 @@ hero-section.html
       <h2>Fullstack Developer</h2>
     </div>
   </div>
-  <button (click)="onNavigate('contact')" class="primary-btn">Let's talk!</button>
+  <button (click)="onNavigate('contact')"
+    class="primary-btn">Let's talk!</button>
   <div class="socials">
     <div class="decorative-line"></div>
     <a href="https://github.com/43and18zeroes"
