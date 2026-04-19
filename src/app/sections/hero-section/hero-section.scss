@@ -97,6 +97,14 @@ hero-section.scss
     justify-content: flex-end;
     margin-bottom: 9px;
     margin-right: 9px;
+
+     @media (min-width: 900px) {
+        margin-bottom: 12px;
+    }
+
+     @media (min-width: 1200px) {
+        margin-bottom: 23px;
+    }
 }
 
 .i-am {
@@ -107,6 +115,10 @@ hero-section.scss
 
     @media (min-width: 900px) {
         font-size: 48px;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 72px;
     }
 }
 
@@ -121,6 +133,10 @@ hero-section.scss
         @media (min-width: 900px) {
             font-size: 50px;
         }
+
+        @media (min-width: 1200px) {
+            font-size: 76px;
+        }
     }
 
     h2 {
@@ -132,6 +148,10 @@ hero-section.scss
 
         @media (min-width: 900px) {
             font-size: 44px;
+        }
+
+        @media (min-width: 1200px) {
+            font-size: 66px;
         }
     }
 }
