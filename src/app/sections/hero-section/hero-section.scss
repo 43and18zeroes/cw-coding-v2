@@ -71,6 +71,10 @@ hero-section.scss
     @media (min-width: 450px) {
         bottom: -45vw;
     }
+
+    @media (min-width: 600px) {
+        display: none;
+    }
 }
 
 .hero-body {
@@ -92,6 +96,10 @@ hero-section.scss
 
 .text-hero {
     display: flex;
+
+    @media (min-width: 600px) {
+        display: none;
+    }
 
     &__desktop {
         display: none;
@@ -179,6 +187,12 @@ hero-section.scss
         @media (min-width: 1200px) {
             font-size: 66px;
         }
+    }
+}
+
+.lets-talk-btn {
+    @media (min-width: 600px) {
+        display: none;
     }
 }
 
