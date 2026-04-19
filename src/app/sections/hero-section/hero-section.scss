@@ -106,7 +106,7 @@ hero-section.scss
         }
 
         @media (min-width: 1200px) {
-            width: 100%;
+            width: 85%;
         }
     }
 }
@@ -118,11 +118,17 @@ hero-section.scss
     margin-bottom: 9px;
     margin-right: 9px;
 
+    @media (min-width: 600px) {
+        margin-right: 16px;
+    }
+
     @media (min-width: 900px) {
+        margin-right: 20px;
         margin-bottom: 12px;
     }
 
     @media (min-width: 1200px) {
+        margin-right: 24px;
         margin-bottom: 23px;
     }
 }
