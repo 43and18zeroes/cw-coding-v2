@@ -16,6 +16,22 @@ hero-section.scss
     flex-direction: column;
     align-items: center;
     position: relative;
+
+    @media (min-width: 600px) {
+        width: 50%;
+    }
+
+    // @media (min-width: 1200px) {
+    //     padding-left: 40px;
+    // }
+
+    // @media (min-width: 1400px) {
+    //     padding-left: 80px;
+    // }
+
+    // @media (min-width: 1600px) {
+    //     padding-left: 80px;
+    // }
 }
 
 .img-shadow {
@@ -88,6 +104,10 @@ hero-section.scss
             height: fit-content;
             width: 87%;
         }
+
+        @media (min-width: 1200px) {
+            width: 100%;
+        }
     }
 }
 
@@ -98,11 +118,11 @@ hero-section.scss
     margin-bottom: 9px;
     margin-right: 9px;
 
-     @media (min-width: 900px) {
+    @media (min-width: 900px) {
         margin-bottom: 12px;
     }
 
-     @media (min-width: 1200px) {
+    @media (min-width: 1200px) {
         margin-bottom: 23px;
     }
 }
