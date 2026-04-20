@@ -119,6 +119,10 @@ hero-section.scss
     }
 }
 
+.text-hero-container {
+    display: flex;
+}
+
 .left {
     display: flex;
     flex-direction: column;
