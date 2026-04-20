@@ -100,22 +100,22 @@ hero-section.scss
     @media (min-width: 600px) {
         display: none;
     }
+}
 
-    &__desktop {
-        display: none;
+.text-hero-desktop {
+    display: none;
 
-        @media (min-width: 600px) {
-            position: absolute;
-            z-index: 10;
-            display: flex;
-            justify-content: flex-end;
-            height: fit-content;
-            width: 87%;
-        }
+    @media (min-width: 600px) {
+        position: absolute;
+        z-index: 10;
+        display: flex;
+        justify-content: flex-end;
+        height: fit-content;
+        width: 87%;
+    }
 
-        @media (min-width: 1200px) {
-            width: 85%;
-        }
+    @media (min-width: 1200px) {
+        width: 85%;
     }
 }
 
