@@ -11,6 +11,12 @@ hero-mobile.scss
 //     }
 // }
 
+:host {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
 .img-container {
     display: flex;
     flex-direction: column;
@@ -78,6 +84,7 @@ hero-mobile.scss
 }
 
 .hero-body {
+    position: relative;
     z-index: 1000;
     display: flex;
     flex-direction: column;
@@ -85,13 +92,13 @@ hero-mobile.scss
     align-items: center;
     flex: 1;
 
-    // @media (min-height: 700px) {
-    //     padding-top: 5vh;
-    // }
+    @media (min-height: 700px) {
+        // padding-top: 1vh;
+    }
 
-    // @media (min-height: 750px) {
-    //     padding-top: 8vh;
-    // }
+    @media (min-height: 750px) {
+        padding-top: 8vh;
+    }
 }
 
 .text-hero-container {
