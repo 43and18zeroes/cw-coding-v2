@@ -1,5 +1,5 @@
-import { Component, inject, input, output } from '@angular/core';
-import { NavigationService } from '../../services/navigation-service';
+import { Component } from '@angular/core';
+import { HeroMobile } from "./hero-mobile/hero-mobile";
 
 @Component({
   selector: 'app-hero-section',
@@ -9,14 +9,6 @@ import { NavigationService } from '../../services/navigation-service';
   },
   templateUrl: './hero-section.html',
   styleUrl: './hero-section.scss',
+  imports: [HeroMobile],
 })
-export class HeroSection {
-  private nav = inject(NavigationService);
-  isActive = input<boolean>(false);
-
-  next = output<void>();
-
-  protected onNavigate(sectionId: string): void {
-    this.nav.navigateTo(sectionId);
-  }
-}
+export class HeroSection { }
