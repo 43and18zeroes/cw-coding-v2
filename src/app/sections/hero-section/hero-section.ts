@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HeroMobile } from "./hero-mobile/hero-mobile";
+import { HeroWide } from "./hero-wide/hero-wide";
 
 @Component({
   selector: 'app-hero-section',
@@ -9,6 +10,6 @@ import { HeroMobile } from "./hero-mobile/hero-mobile";
   },
   templateUrl: './hero-section.html',
   styleUrl: './hero-section.scss',
-  imports: [HeroMobile],
+  imports: [HeroMobile, HeroWide],
 })
 export class HeroSection { }

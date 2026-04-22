@@ -114,3 +114,15 @@ body {
   background-color: var(--accent-color);
   border-radius: 2px;
 }
+
+@media (min-width: 599.98px) {
+  .only-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .only-wide {
+    display: none !important;
+  }
+}
