@@ -50,9 +50,10 @@ hero-mobile.scss
     justify-content: space-between;
     align-items: center;
     flex: 1;
+    padding-top: 1vh;
 
     @media (min-height: 700px) {
-        // padding-top: 1vh;
+        padding-top: 2vh;
     }
 
     @media (min-height: 750px) {
