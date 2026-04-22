@@ -2,15 +2,6 @@
 hero-mobile.scss
 ========================= */
 
-// .hero-container {
-//     @media (min-width: 600px) {
-//         display: flex;
-//         justify-content: flex-start;
-//         align-items: center;
-//         margin: 0 32px;
-//     }
-// }
-
 :host {
     height: 100dvh;
     display: flex;
@@ -22,46 +13,18 @@ hero-mobile.scss
     flex-direction: column;
     align-items: center;
     position: relative;
-
-    // @media (min-width: 600px) {
-    //     width: 50%;
-    // }
-
-    // @media (min-width: 1200px) {
-    //     padding-left: 40px;
-    // }
-
-    // @media (min-width: 1400px) {
-    //     padding-left: 80px;
-    // }
-
-    // @media (min-width: 1600px) {
-    //     padding-left: 80px;
-    // }
 }
 
 .img-shadow {
     position: absolute;
     width: 400px;
     top: -25px;
-
-    // @media (min-width: 600px) {
-    //     width: 600px;
-    // }
 }
 
 .img-christoph {
     width: 300px;
     margin-top: -20px;
     z-index: 10;
-
-    // @media (min-width: 600px) {
-    //     width: 450px;
-    // }
-
-    // @media (min-width: 900px) {
-    //     width: 614px;
-    // }
 }
 
 .img-arch {
@@ -77,10 +40,6 @@ hero-mobile.scss
     @media (min-width: 450px) {
         bottom: -45vw;
     }
-
-    // @media (min-width: 600px) {
-    //     display: none;
-    // }
 }
 
 .hero-body {
@@ -110,51 +69,12 @@ hero-mobile.scss
     display: flex;
 }
 
-// .text-hero {
-//     display: flex;
-
-//     @media (min-width: 600px) {
-//         display: none;
-//     }
-
-//     &__desktop {
-//         display: none;
-
-//         @media (min-width: 600px) {
-//             position: absolute;
-//             z-index: 10;
-//             display: flex;
-//             justify-content: flex-end;
-//             height: fit-content;
-//             // width: 87%;
-//         }
-
-//         @media (min-width: 1200px) {
-//             // width: 85%;
-//         }
-//     }
-// }
-
 .left {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     margin-bottom: 9px;
     margin-right: 9px;
-
-    // @media (min-width: 600px) {
-    //     margin-right: 16px;
-    // }
-
-    // @media (min-width: 900px) {
-    //     margin-right: 20px;
-    //     margin-bottom: 12px;
-    // }
-
-    // @media (min-width: 1200px) {
-    //     margin-right: 24px;
-    //     margin-bottom: 23px;
-    // }
 }
 
 .i-am {
@@ -162,14 +82,6 @@ hero-mobile.scss
     transform: rotate(180deg);
     font-size: 28px;
     line-height: 0.75;
-
-    // @media (min-width: 900px) {
-    //     font-size: 48px;
-    // }
-
-    // @media (min-width: 1200px) {
-    //     font-size: 72px;
-    // }
 }
 
 .content {
@@ -179,14 +91,6 @@ hero-mobile.scss
 
     h1 {
         font-size: 30px;
-
-        // @media (min-width: 900px) {
-        //     font-size: 50px;
-        // }
-
-        // @media (min-width: 1200px) {
-        //     font-size: 76px;
-        // }
     }
 
     h2 {
@@ -195,30 +99,8 @@ hero-mobile.scss
         font-weight: 300;
         text-transform: uppercase;
         margin-top: -7px;
-
-        // @media (min-width: 900px) {
-        //     font-size: 44px;
-        // }
-
-        // @media (min-width: 1200px) {
-        //     font-size: 66px;
-        // }
     }
 }
-
-// .lets-talk-mobile {
-//     @media (min-width: 600px) {
-//         display: none;
-//     }
-// }
-
-// .lets-talk-desktop {
-//     display: none;
-
-//     @media (min-width: 600px) {
-//         display: inline-block;
-//     }
-// }
 
 .socials {
     width: 100%;
