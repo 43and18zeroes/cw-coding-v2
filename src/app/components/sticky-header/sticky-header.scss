@@ -12,6 +12,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: var(--padding) 0;
   position: relative;
 
@@ -26,6 +27,20 @@
     z-index: -1;
     -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  @media (min-width: 600px) {
+    padding-right: var(--padding);
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: calc(var(--padding-wide) / 2);
+    padding-right: calc(var(--padding-wide) / 2);
+  }
+
+  @media (min-width: 1280px) {
+    padding-left: var(--padding-wide);
+    padding-right: var(--padding-wide);
   }
 }
 
@@ -76,9 +91,17 @@
 
 .menu-wide {
   display: flex;
+  gap: 29px;
 
   a {
-    font-size: 32px;
+    font-size: 26px;
+    padding-top: 4px;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      font-size: 32px;
+      padding-top: 0;
+    }
   }
 }
 
