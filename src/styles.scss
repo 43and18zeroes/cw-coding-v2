@@ -115,13 +115,13 @@ body {
   border-radius: 2px;
 }
 
-@media (min-width: 599.98px) {
+@media (min-width: 600px) {
   .only-mobile {
     display: none !important;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 599.98px) {
   .only-wide {
     display: none !important;
   }

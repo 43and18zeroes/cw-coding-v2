@@ -12,13 +12,27 @@ export class StickyHeaderComponent {
 
   @Output() navigate = new EventEmitter<string>();
 
-  private readonly HIDDEN_IDS = new Set(['hero', 'portfolio-2']);
-
-  get visibleSections() {
-    return this.sections.filter(s => !this.HIDDEN_IDS.has(s.id));
-  }
+  private readonly BASE_HIDDEN_IDS = new Set(['hero', 'portfolio-2']);
+  private readonly mediaQuery = window.matchMedia('(min-width: 600px)');
 
   isMenuOpen = signal(false);
+  isWide = signal(this.mediaQuery.matches);
+
+  constructor() {
+    this.mediaQuery.addEventListener('change', (event) => {
+      this.isWide.set(event.matches);
+    });
+  }
+
+  get visibleSections() {
+    const hiddenIds = new Set(this.BASE_HIDDEN_IDS);
+
+    if (this.isWide()) {
+      hiddenIds.add('contact');
+    }
+
+    return this.sections.filter(s => !hiddenIds.has(s.id));
+  }
 
   toggleMenu() {
     this.isMenuOpen.update(val => !val);
