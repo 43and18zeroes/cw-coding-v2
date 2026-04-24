@@ -3,10 +3,11 @@ sticky-header.html
 ========================= -->
 
 <header class="header">
-  <a class="logo" (click)="onNavigate('top')">Christoph</a>
+  <img (click)="onNavigate('top')" class="logo"
+    src="/img/sticky-header/christoph.webp" alt="Christoph">
 
-  <button class="menu-btn only-mobile" (click)="toggleMenu()"
-    [class.open]="isMenuOpen()">
+  <button class="menu-btn only-mobile"
+    (click)="toggleMenu()" [class.open]="isMenuOpen()">
     <div class="hamburger-icon">
       <span></span>
       <span></span>
@@ -23,7 +24,8 @@ sticky-header.html
   </div>
 </header>
 
-<nav class="sidebar only-mobile" [class.active]="isMenuOpen()">
+<nav class="sidebar only-mobile"
+  [class.active]="isMenuOpen()">
   <ul>
     @for (section of visibleSections; track section.id) {
     <li (click)="onNavigate(section.id)">
@@ -34,5 +36,6 @@ sticky-header.html
 </nav>
 
 @if (isMenuOpen()) {
-<div class="backdrop only-mobile" (click)="toggleMenu()"></div>
+<div class="backdrop only-mobile" (click)="toggleMenu()">
+</div>
 }
