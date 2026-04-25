@@ -12,6 +12,7 @@ hero-wide.scss
     flex-direction: column;
     align-items: center;
     position: relative;
+    padding-left: calc(var(--padding) * 5);
 }
 
 .img-shadow {
@@ -24,6 +25,56 @@ hero-wide.scss
     width: 300px;
     margin-top: -20px;
     z-index: 10;
+}
+
+.hero-text {
+    position: absolute;
+    right: 0;
+    z-index: 200;
+    height: 100%;
+    // width: 66%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: calc(var(--padding) * 5);
+}
+
+.text-intro {
+    display: flex;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 9px;
+    margin-right: 9px;
+}
+
+.i-am {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 28px;
+    line-height: 0.75;
+}
+
+.content {
+    * {
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 26px;
+        color: var(--accent-color);
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-top: -7px;
+    }
 }
 
 .img-arch {
