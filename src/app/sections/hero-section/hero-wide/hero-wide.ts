@@ -5,7 +5,10 @@ import { NavigationService } from '../../../services/navigation-service';
   selector: 'app-hero-wide',
   imports: [],
   templateUrl: './hero-wide.html',
-  styleUrl: './hero-wide.scss',
+  styleUrls: [
+    './hero-wide.scss',
+    '../hero-section.scss'
+  ]
 })
 export class HeroWide {
   private nav = inject(NavigationService);
