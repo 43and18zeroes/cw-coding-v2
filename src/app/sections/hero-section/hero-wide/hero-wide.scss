@@ -5,6 +5,7 @@ hero-wide.scss
 .main-container {
     display: flex;
     position: relative;
+    margin-top: 10vh;
 }
 
 .img-container {
@@ -55,7 +56,7 @@ hero-wide.scss
 .i-am {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    font-size: 28px;
+    font-size: 27px;
     line-height: 0.75;
 }
 
@@ -74,6 +75,15 @@ hero-wide.scss
         font-weight: 300;
         text-transform: uppercase;
         margin-top: -7px;
+
+    }
+
+    .blue-shadow {
+        text-shadow:
+            -1px -1px 0 rgba(0, 0, 0, 0.45),
+            1px -1px 0 rgba(0, 0, 0, 0.45),
+            -1px 1px 0 rgba(0, 0, 0, 0.45),
+            1px 1px 0 rgba(0, 0, 0, 0.45);
     }
 }
 
@@ -81,7 +91,7 @@ hero-wide.scss
     position: absolute;
     width: 100%;
     z-index: 100;
-    top: 232px;
+    top: 216px;
 }
 
 .hero-footer {
