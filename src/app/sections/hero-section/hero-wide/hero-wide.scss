@@ -2,10 +2,21 @@
 hero-wide.scss
 ========================= */
 
+:host {
+    @media (min-width: 740px) {
+        --img-factor: 1.1;
+    }
+
+    @media (min-width: 800px) {
+        --img-factor: 1.2;
+    }
+}
+
 .main-container {
     display: flex;
+    align-items: center;
     position: relative;
-    margin-top: 10vh;
+    margin-top: 5vh;
 }
 
 .img-container {
@@ -14,18 +25,32 @@ hero-wide.scss
     align-items: center;
     position: relative;
     padding-left: calc(var(--padding) * 5);
+
+    @media (min-width: 740px) {
+        width: 100%;
+    }
 }
 
 .img-shadow {
+    --img-shadow-width: 400px;
     position: absolute;
-    width: 400px;
+    width: var(--img-shadow-width);
     top: -25px;
+
+    @media (min-width: 740px) {
+        width: calc(var(--img-shadow-width) * var(--img-factor));
+    }
 }
 
 .img-christoph {
-    width: 300px;
+    --img-christoph-width: 300px;
+    width: var(--img-christoph-width);
     margin-top: -20px;
     z-index: 10;
+
+    @media (min-width: 740px) {
+        width: calc(var(--img-christoph-width) * var(--img-factor));
+    }
 }
 
 .hero-text {
@@ -39,6 +64,13 @@ hero-wide.scss
     align-items: center;
     gap: 16px;
     padding-right: calc(var(--padding) * 5);
+    padding-bottom: 80px;
+
+    @media (min-width: 740px) {
+        position: static;
+        width: 100%;
+        padding-bottom: 100px;
+    }
 }
 
 .text-intro {
@@ -92,6 +124,10 @@ hero-wide.scss
     width: 100%;
     z-index: 100;
     top: 216px;
+
+    @media (min-width: 740px) {
+        top: 240px;
+    }
 }
 
 .hero-footer {
