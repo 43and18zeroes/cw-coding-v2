@@ -13,10 +13,16 @@ hero-wide.scss
 
     @media (min-width: 900px) {
         --text-factor: 1.3;
+        --img-factor: 1.3;
+    }
+
+    @media (min-width: 1000px) {
+        --text-factor: 1.4;
     }
 
     @media (min-width: 1150px) {
         --img-factor: 1.3;
+        --text-factor: 1.5;
     }
 
     @media (min-width: 1250px) {
@@ -110,11 +116,16 @@ hero-wide.scss
 }
 
 .left {
+    --left-margin-bottom: 9px;
+    margin-bottom: var(--left-margin-bottom);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    margin-bottom: 9px;
     margin-right: 9px;
+
+    @media (min-width: 900px) {
+        margin-bottom: calc(var(--left-margin-bottom) * var(--text-factor));
+    }
 }
 
 .i-am {
