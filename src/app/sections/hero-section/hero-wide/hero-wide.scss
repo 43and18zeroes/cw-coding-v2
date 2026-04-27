@@ -10,6 +10,34 @@ hero-wide.scss
     @media (min-width: 800px) {
         --img-factor: 1.2;
     }
+
+    @media (min-width: 1150px) {
+        --img-factor: 1.3;
+    }
+
+    @media (min-width: 1250px) {
+        --img-factor: 1.4;
+    }
+
+    @media (min-width: 1500px) {
+        --img-factor: 1.5;
+    }
+
+    @media (min-width: 1920px) {
+        --img-factor: 1.6;
+    }
+
+    @media (min-width: 2100px) {
+        --img-factor: 1.7;
+    }
+
+    @media (min-width: 2300px) {
+        --img-factor: 1.8;
+    }
+
+    @media (min-width: 2900px) {
+        --img-factor: 2.2;
+    }
 }
 
 .main-container {
