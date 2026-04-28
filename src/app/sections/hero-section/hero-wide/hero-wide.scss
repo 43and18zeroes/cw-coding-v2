@@ -27,10 +27,20 @@ hero-wide.scss
 
     @media (min-width: 1250px) {
         --img-factor: 1.4;
+        --text-factor: 1.6;
+    }
+
+    @media (min-width: 1350px) {
+        --text-factor: 1.7;
+    }
+
+    @media (min-width: 1450px) {
+        --text-factor: 1.8;
     }
 
     @media (min-width: 1500px) {
         --img-factor: 1.5;
+        --text-factor: 2;
     }
 
     @media (min-width: 1920px) {
@@ -108,6 +118,35 @@ hero-wide.scss
         position: static;
         width: 100%;
         padding-bottom: 100px;
+        gap: 32px;
+    }
+
+    @media (min-width: 900px) {
+        padding-right: calc(var(--padding) * 9);
+    }
+
+    @media (min-width: 1000px) {
+        padding-right: calc(var(--padding) * 12);
+    }
+
+    @media (min-width: 1150px) {
+        padding-right: calc(var(--padding) * 14);
+    }
+
+    @media (min-width: 1250px) {
+        padding-right: calc(var(--padding) * 16);
+    }
+
+    @media (min-width: 1350px) {
+        padding-right: calc(var(--padding) * 18);
+    }
+
+    @media (min-width: 1450px) {
+        padding-right: calc(var(--padding) * 20);
+    }
+
+    @media (min-width: 1500px) {
+        padding-right: calc(var(--padding) * 22);
     }
 }
 
