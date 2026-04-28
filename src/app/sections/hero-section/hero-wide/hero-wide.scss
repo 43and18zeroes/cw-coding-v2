@@ -229,4 +229,17 @@ hero-wide.scss
 .hero-footer {
     position: relative;
     z-index: 200;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 calc(var(--padding) * 2);
+
+    @media (min-width: 1024px) {
+        padding-left: calc(var(--padding-wide) / 2);
+        padding-right: calc(var(--padding-wide) / 2);
+    }
+
+    @media (min-width: 1280px) {
+        padding-left: var(--padding-wide);
+        padding-right: var(--padding-wide);
+    }
 }
