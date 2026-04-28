@@ -17,7 +17,7 @@ sticky-header.html
 
   <div class="menu-wide only-wide">
     @for (section of visibleSections; track section.id) {
-    <a (click)="onNavigate(section.id)">
+    <a (click)="onNavigate(section.id)" class="text-link">
       {{ section.title }}
     </a>
     }
