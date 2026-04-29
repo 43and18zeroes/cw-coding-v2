@@ -262,6 +262,11 @@ hero-wide.scss
         }
     }
 
+    .scroll-down {
+        writing-mode: vertical-rl;
+        transform: rotate(0deg);
+    }
+
     @media (min-width: 1024px) {
         padding-left: calc(var(--padding-wide) / 2);
         padding-right: calc(var(--padding-wide) / 2);
