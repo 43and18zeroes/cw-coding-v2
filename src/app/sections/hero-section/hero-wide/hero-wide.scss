@@ -58,6 +58,14 @@ hero-wide.scss
     @media (min-width: 2900px) {
         --img-factor: 2.2;
     }
+
+    height: 100%;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .main-container {
@@ -229,8 +237,10 @@ hero-wide.scss
 .hero-footer {
     position: relative;
     z-index: 200;
+    flex: 1;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     padding: 0 calc(var(--padding) * 2);
 
     @media (min-width: 1024px) {
