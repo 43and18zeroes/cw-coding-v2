@@ -241,7 +241,26 @@ hero-wide.scss
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0 calc(var(--padding) * 2);
+    padding-left: calc(var(--padding-wide) / 2);
+    padding-right: calc(var(--padding-wide) / 2);
+    padding-bottom: calc(var(--padding) * 2);
+
+    .socials {
+
+        .decorative-line {
+            left: -2px;
+            bottom: 36px;
+            width: 36px;
+        }
+
+        @media (min-width: 600px) {
+            width: 50px;
+        }
+
+        a {
+            margin-left: 42px;
+        }
+    }
 
     @media (min-width: 1024px) {
         padding-left: calc(var(--padding-wide) / 2);

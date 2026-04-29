@@ -114,6 +114,11 @@ body {
   height: 4px;
   background-color: var(--accent-color);
   border-radius: 2px;
+
+  @media (min-width: 600px) {
+    height: 6px;
+    border-radius: 3px;
+  }
 }
 
 @media (min-width: 600px) {
