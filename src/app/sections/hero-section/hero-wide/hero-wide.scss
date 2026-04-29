@@ -251,10 +251,10 @@ hero-wide.scss
             left: -2px;
             bottom: 36px;
             width: 36px;
-        }
 
-        @media (min-width: 600px) {
-            width: 50px;
+            @media (min-width: 600px) {
+                width: 50px;
+            }
         }
 
         a {
