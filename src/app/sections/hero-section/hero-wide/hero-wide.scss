@@ -4,16 +4,15 @@ hero-wide.scss
 
 :host {
     @media (min-width: 740px) {
-        --img-factor: 1.1;
+        --img-factor: 1.2;
     }
 
     @media (min-width: 800px) {
-        --img-factor: 1.2;
+        --img-factor: 1.3;
     }
 
     @media (min-width: 900px) {
         --text-factor: 1.3;
-        --img-factor: 1.3;
     }
 
     @media (min-width: 1000px) {
@@ -21,12 +20,12 @@ hero-wide.scss
     }
 
     @media (min-width: 1150px) {
-        --img-factor: 1.3;
+        --img-factor: 1.5;
         --text-factor: 1.5;
     }
 
     @media (min-width: 1250px) {
-        --img-factor: 1.4;
+        --img-factor: 1.6;
         --text-factor: 1.7;
     }
 
@@ -39,24 +38,24 @@ hero-wide.scss
     }
 
     @media (min-width: 1500px) {
-        --img-factor: 1.5;
+        --img-factor: 1.7;
         --text-factor: 2.1;
     }
 
     @media (min-width: 1920px) {
-        --img-factor: 1.6;
-    }
-
-    @media (min-width: 2100px) {
-        --img-factor: 1.7;
-    }
-
-    @media (min-width: 2300px) {
         --img-factor: 1.8;
     }
 
+    @media (min-width: 2100px) {
+        --img-factor: 1.9;
+    }
+
+    @media (min-width: 2300px) {
+        --img-factor: 2;
+    }
+
     @media (min-width: 2900px) {
-        --img-factor: 2.2;
+        --img-factor: 2.3;
     }
 
     height: 100%;
