@@ -338,20 +338,31 @@ hero-wide.scss
 
         .decorative-line {
             left: -2px;
-            bottom: 36px;
-            width: 36px;
+            bottom: 38px;
+            width: 50px;
 
-            @media (min-width: 600px) {
-                width: 50px;
+            @media (min-width: 768px) {
+                bottom: 42px;
             }
         }
 
         a {
-            margin-left: 42px;
+            margin-left: 30px;
+
+            @media (min-width: 768px) {
+                margin-left: 42px;
+            }
         }
 
         .text-link {
-            font-size: 28px;
+            font-size: 20px;
+            top: -11px;
+
+
+            @media (min-width: 768px) {
+                font-size: 28px;
+                top: -6px;
+            }
         }
     }
 
