@@ -122,18 +122,6 @@ body {
   }
 }
 
-@media (min-width: 600px) {
-  .only-mobile {
-    display: none !important;
-  }
-}
-
-@media (max-width: 599.98px) {
-  .only-wide {
-    display: none !important;
-  }
-}
-
 .text-link {
   color: #ffffff;
   text-decoration: none;
@@ -154,4 +142,21 @@ body {
 .text-link:hover::after,
 .text-link:focus-visible::after {
   width: 100%;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+@media (min-width: 600px) {
+  .only-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 599.98px) {
+  .only-wide {
+    display: none !important;
+  }
 }

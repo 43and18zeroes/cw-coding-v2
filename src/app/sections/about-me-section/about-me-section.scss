@@ -3,5 +3,11 @@ about-me-section.scss
 ========================= */
 
 :host {
-    padding: var(--header-height) var(--padding-body) var(--padding-body) var(--padding-body); 
+    padding: var(--header-height) var(--padding-body) var(--padding-body) var(--padding-body);
+}
+
+.about-me-container {
+    @media (min-width: 600px) {
+        display: flex;
+    }
 }
