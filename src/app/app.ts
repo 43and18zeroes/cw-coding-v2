@@ -44,7 +44,7 @@ export class App {
       const id = this.nav.targetSectionId();
       if (id) {
         this.scrollToSectionById(id);
-        this.nav.targetSectionId.set(null); // reset
+        this.nav.targetSectionId.set(null);
       }
     });
   }
@@ -70,8 +70,20 @@ export class App {
   private animationTimeout: ReturnType<typeof setTimeout> | null = null;
   private wheelAccumulator = 0;
 
+  /* ngAfterViewInit Prod */
+
+  // ngAfterViewInit(): void {
+  //   this.updateActiveSection();
+  // }
+
+  /* ngAfterViewInit Dev */
+
   ngAfterViewInit(): void {
     this.updateActiveSection();
+
+    setTimeout(() => {
+      this.scrollToSection(1, true);
+    });
   }
 
   protected onScroll(): void {
@@ -87,7 +99,31 @@ export class App {
     });
   }
 
-  protected scrollToSection(index: number): void {
+  /* scrollToSection Prod */
+
+  // protected scrollToSection(index: number): void {
+  //   const scroller = this.scrollerRef.nativeElement;
+  //   const clampedIndex = this.normalizeIndex(index);
+  //   const top = clampedIndex * scroller.clientHeight;
+
+  //   this.isAnimatingScroll = true;
+  //   this.activeIndex.set(clampedIndex);
+
+  //   scroller.scrollTo({ top, behavior: 'smooth' });
+
+  //   if (this.animationTimeout) {
+  //     clearTimeout(this.animationTimeout);
+  //   }
+
+  //   this.animationTimeout = setTimeout(() => {
+  //     this.isAnimatingScroll = false;
+  //     this.updateActiveSection();
+  //   }, this.SCROLL_ANIMATION_MS);
+  // }
+
+  /* scrollToSection Dev */
+
+  protected scrollToSection(index: number, instant: boolean = false): void {
     const scroller = this.scrollerRef.nativeElement;
     const clampedIndex = this.normalizeIndex(index);
     const top = clampedIndex * scroller.clientHeight;
@@ -95,7 +131,7 @@ export class App {
     this.isAnimatingScroll = true;
     this.activeIndex.set(clampedIndex);
 
-    scroller.scrollTo({ top, behavior: 'smooth' });
+    scroller.scrollTo({ top, behavior: instant ? 'auto' : 'smooth' });
 
     if (this.animationTimeout) {
       clearTimeout(this.animationTimeout);
