@@ -3,8 +3,5 @@ about-me-section.scss
 ========================= */
 
 :host {
-    background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-        url('https://cdn.pixabay.com/photo/2015/01/15/18/16/smartphone-600635_1280.jpg');
-    background-size: cover;
-    background-position: center;
+    padding: var(--header-height) var(--padding-body) var(--padding-body) var(--padding-body); 
 }
