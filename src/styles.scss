@@ -149,6 +149,11 @@ h2 {
   font-weight: 500;
 }
 
+.sub-headline {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
 @media (min-width: 600px) {
   .only-mobile {
     display: none !important;
