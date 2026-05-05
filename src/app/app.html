@@ -24,8 +24,10 @@ app.html
     (scroll)="onScroll()">
     @for (section of sections; track section.id; let i =
     $index) {
-    <ng-container
-      *ngComponentOutlet="section.component"></ng-container>
+    <div class="snap-section">
+      <ng-container
+        *ngComponentOutlet="section.component"></ng-container>
+    </div>
     }
   </main>
 </div>

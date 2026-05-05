@@ -3,7 +3,8 @@ hero-mobile.scss
 ========================= */
 
 :host {
-    height: 100dvh;
+    // height: 100dvh;
+    height: inherit;
     display: flex;
     flex-direction: column;
 }
