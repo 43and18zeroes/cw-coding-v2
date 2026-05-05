@@ -38,6 +38,10 @@ app.scss
 
 .snap-section {
   height: 100dvh;
+
+    &--ios {
+    height: 90dvh;
+  }
 }
 
 .dot {

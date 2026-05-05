@@ -18,6 +18,7 @@ import { StickyHeaderComponent } from './components/sticky-header/sticky-header'
 import { PortraitLockComponent } from './components/portrait-lock-component/portrait-lock-component';
 import { NgComponentOutlet } from '@angular/common';
 import { NavigationService } from './services/navigation-service';
+import { DeviceService } from './services/device-service';
 
 type SectionItem = {
   id: string;
@@ -38,6 +39,9 @@ type SectionItem = {
 })
 export class App {
   private nav = inject(NavigationService);
+  private readonly deviceService = inject(DeviceService);
+
+  readonly isIOs = this.deviceService.isIOs;
 
   constructor() {
     effect(() => {

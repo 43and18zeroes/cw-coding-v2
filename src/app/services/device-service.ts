@@ -4,9 +4,9 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class DeviceService {
-  readonly isMobile = signal(this.checkMobile());
+  readonly isIOs = signal(this.checkIOs());
 
-  private checkMobile(): boolean {
-    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  private checkIOs(): boolean {
+    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
   }
 }
