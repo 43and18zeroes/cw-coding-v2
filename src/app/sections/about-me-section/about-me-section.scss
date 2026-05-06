@@ -34,5 +34,17 @@ p {
 
 h3 {
     font-weight: 400;
-    margin: 8px 0 8px 16px;
+    margin: 8px 0 0 16px;
+}
+
+ul {
+    margin-top: 4px;
+}
+
+.about-me-img {
+    display: none;
+
+    @media (min-width: 768px) {
+        display: block;
+    }
 }
