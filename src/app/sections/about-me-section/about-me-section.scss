@@ -42,24 +42,29 @@ ul {
 }
 
 .about-me-img {
-    position: relative;
+    display: none;
 
-    @media (min-width: 1000px) {
+    @media (min-width: 920px) {
         display: flex;
         align-items: center;
-    }
+        position: relative;
+        padding-right: 40px;
 
-    img {
-        width: 300px;
-        border-radius: 50%;
-        border: 4px solid var(--secondary-color);
-    }
+        img {
+            width: 300px;
+            border-radius: 50%;
+            border: 4px solid var(--secondary-color);
+            background-color: var(--main-bg-color);
+        }
 
-    .horizontal-line {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 300px;
-        border: 2px solid var(--secondary-color);
+        .horizontal-line {
+            z-index: -10;
+            position: absolute;
+            top: 50%;
+            right: -20px;
+            transform: translateY(-50%);
+            width: 300px;
+            border: 2px solid var(--secondary-color);
+        }
     }
 }
