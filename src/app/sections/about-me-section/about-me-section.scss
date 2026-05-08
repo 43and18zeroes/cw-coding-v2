@@ -7,8 +7,11 @@ about-me-section.scss
 :host {
     width: calc(100% - 2 * var(--padding-body));
     padding: var(--header-height) var(--padding-body) var(--padding-body) var(--padding-body);
-
     @include mixins.general-padding;
+
+    @media (min-width: 1280px) {
+        padding-top: 100px;
+    }
 }
 
 .about-me-container {
