@@ -7,7 +7,7 @@ about-me-section.scss
 :host {
     width: calc(100% - 2 * var(--padding-body));
     padding: var(--header-height) var(--padding-body) var(--padding-body) var(--padding-body);
-    
+
     @include mixins.general-padding;
 }
 
@@ -21,6 +21,11 @@ about-me-section.scss
 
 .about-me-text {
     padding-right: 16px;
+
+    @media (min-width: 1280px) {
+        width: 50%;
+        padding-right: 40px;
+    }
 }
 
 p {
@@ -72,6 +77,30 @@ ul {
             transform: translateY(-50%);
             width: 300px;
             border: 2px solid var(--secondary-color);
+
+            @media (min-width: 1280px) {
+                width: 500px;
+            }
         }
+    }
+
+    @media (min-width: 1024px) {
+        padding-right: 70px;
+
+        img {
+            width: 400px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        padding-right: 70px;
+
+        img {
+            width: 453px;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        width: 40%;
     }
 }
