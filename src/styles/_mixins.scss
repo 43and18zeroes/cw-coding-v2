@@ -1,0 +1,15 @@
+/* =========================
+   _mixins.scss
+========================= */
+
+@mixin general-padding {
+    @media (min-width: 1024px) {
+        padding-left: calc(var(--padding-wide) / 2);
+        padding-right: calc(var(--padding-wide) / 2);
+    }
+
+    @media (min-width: 1280px) {
+        padding-left: var(--padding-wide);
+        padding-right: var(--padding-wide);
+    }
+}

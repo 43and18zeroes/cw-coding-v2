@@ -2,14 +2,18 @@
 about-me-section.scss
 ========================= */
 
+@use '../../../styles/mixins' as mixins;
+
 :host {
     width: calc(100% - 2 * var(--padding-body));
     padding: var(--header-height) var(--padding-body) var(--padding-body) var(--padding-body);
+    
+    @include mixins.general-padding;
 }
 
 .about-me-container {
     flex: 1;
-    
+
     @media (min-width: 600px) {
         display: flex;
     }

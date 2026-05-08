@@ -2,6 +2,8 @@
    sticky-header.scss
 ========================= */
 
+@use '../../../styles/mixins' as mixins;
+
 :host {
   position: fixed;
   display: block;
@@ -33,21 +35,17 @@
     padding-right: calc(var(--padding) * 2);
   }
 
-  @media (min-width: 1024px) {
-    padding-left: calc(var(--padding-wide) / 2);
-    padding-right: calc(var(--padding-wide) / 2);
-  }
-
-  @media (min-width: 1280px) {
-    padding-left: var(--padding-wide);
-    padding-right: var(--padding-wide);
-  }
+  @include mixins.general-padding;
 }
 
 .logo {
   width: 188px;
   padding: calc(var(--padding) / 2) 0 0 calc(var(--padding) * 2);
   cursor: pointer;
+
+  @media (min-width: 1024px) {
+    padding-left: 0;
+  }
 }
 
 .menu-btn {
