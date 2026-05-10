@@ -8,12 +8,29 @@ skills-section.scss
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 32px;
     width: calc(100% - 2 * var(--padding-body));
     padding: var(--header-height) var(--padding-body) var(--padding-body) var(--padding-body);
     @include mixins.general-padding;
 
+    @media (min-width: 920px) {
+        flex-direction: row-reverse;
+    }
+
     @media (min-width: 1280px) {
         padding-top: 100px;
+    }
+}
+
+.skills-text {
+    position: relative;
+    text-align: right;
+    padding-right: 32px;
+
+    .decorative-line {
+        top: 35px;
+        right: -20px;
+        width: 45px;
     }
 }
 
