@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { NavigationService } from '../../services/navigation-service';
 
 @Component({
   selector: 'app-skills-section',
@@ -9,4 +10,10 @@ import { Component } from '@angular/core';
   templateUrl: './skills-section.html',
   styleUrl: './skills-section.scss',
 })
-export class SkillsSection { }
+export class SkillsSection {
+  private nav = inject(NavigationService);
+
+  protected onNavigate(sectionId: string): void {
+    this.nav.navigateTo(sectionId);
+  }
+}

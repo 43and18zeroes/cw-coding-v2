@@ -5,6 +5,9 @@ skills-section.scss
 @use '../../../styles/mixins' as mixins;
 
 :host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: calc(100% - 2 * var(--padding-body));
     padding: var(--header-height) var(--padding-body) var(--padding-body) var(--padding-body);
     @include mixins.general-padding;
@@ -12,4 +15,11 @@ skills-section.scss
     @media (min-width: 1280px) {
         padding-top: 100px;
     }
+}
+
+.light-blue-fog {
+    position: absolute;
+    left: 0;
+    bottom: -150px;
+    width: 150px;
 }
