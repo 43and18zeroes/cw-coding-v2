@@ -34,6 +34,23 @@ skills-section.scss
     }
 }
 
+.touch-btn {
+    &__mobile {
+        @media (min-width: 920px) {
+            display: none;
+        }
+    }
+
+    &__wide {
+        display: none;
+
+        @media (min-width: 920px) {
+            display: inline-block;
+
+        }
+    }
+}
+
 .light-blue-fog {
     position: absolute;
     left: 0;
