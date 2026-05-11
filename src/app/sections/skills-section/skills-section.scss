@@ -34,19 +34,18 @@ skills-section.scss
     }
 }
 
-.touch-btn {
-    &__mobile {
+.contact-btn {
+    &--mobile {
         @media (min-width: 920px) {
             display: none;
         }
     }
 
-    &__wide {
+    &--wide {
         display: none;
 
         @media (min-width: 920px) {
             display: inline-block;
-
         }
     }
 }
