@@ -52,6 +52,7 @@ skills-section.scss
 
 .skills-icons {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
 
     .skill-icon {
