@@ -50,6 +50,23 @@ skills-section.scss
     }
 }
 
+.skills-icons {
+    display: flex;
+    gap: 16px;
+
+    .skill-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        
+        span {
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+    }
+}
+
 .light-blue-fog {
     position: absolute;
     left: 0;
