@@ -8,9 +8,10 @@ skills-section.scss
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
     width: calc(100% - 2 * var(--padding-body));
     padding: var(--header-height) var(--padding-body) var(--padding-body) var(--padding-body);
+    transform: translateY(-24px);
     @include mixins.general-padding;
 
     @media (min-width: 920px) {
