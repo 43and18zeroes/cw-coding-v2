@@ -32,6 +32,10 @@ skills-section.scss
         right: -20px;
         width: 45px;
     }
+
+    p {
+        margin-bottom: 0;
+    }
 }
 
 .contact-btn {
@@ -51,18 +55,29 @@ skills-section.scss
 }
 
 .skills-icons {
+    position: relative;
+    z-index: 10;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 8px;
+    padding: 0 1px;
 
     .skill-icon {
+        width: 75px;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        
+
+        svg {
+            --size: 40px;
+            width: var(--size);
+            height: var(--size);
+        }
+
         span {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 600;
             letter-spacing: 1px;
         }
@@ -73,5 +88,5 @@ skills-section.scss
     position: absolute;
     left: 0;
     bottom: -150px;
-    width: 150px;
+    width: 100px;
 }
