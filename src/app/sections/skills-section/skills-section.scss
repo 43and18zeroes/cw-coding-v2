@@ -6,9 +6,10 @@ skills-section.scss
 
 :host {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 24px;
+    // column-gap: 24px;
+    // row-gap: 48px;
     width: calc(100% - 2 * var(--padding-body));
     padding: var(--header-height) var(--padding-body) var(--padding-body) var(--padding-body);
     transform: translateY(-24px);
