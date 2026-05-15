@@ -8,6 +8,8 @@ about-me-section.scss
     position: relative;
     width: calc(100% - 2 * var(--padding-body));
     padding: var(--header-height) var(--padding-body) var(--padding-body) var(--padding-body);
+    display: flex;
+    justify-content: center;
     @include mixins.general-padding;
 
     @media (min-width: 1280px) {
@@ -32,8 +34,12 @@ about-me-section.scss
     }
 }
 
+h2,
 .about-me-container {
-    flex: 1;
+    transform: translateY(-24px);
+}
+
+.about-me-container {
 
     @media (min-width: 600px) {
         display: flex;
