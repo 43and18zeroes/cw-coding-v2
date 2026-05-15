@@ -8,8 +8,6 @@ skills-section.scss
     display: flex;
     justify-content: space-around;
     align-items: center;
-    // column-gap: 24px;
-    // row-gap: 48px;
     width: calc(100% - 2 * var(--padding-body));
     padding: var(--header-height) var(--padding-body) var(--padding-body) var(--padding-body);
     transform: translateY(-24px);
@@ -41,7 +39,10 @@ skills-section.scss
 }
 
 .contact-btn {
+
     &--mobile {
+        transform: translateY(-24px);
+
         @media (min-width: 920px) {
             display: none;
         }
@@ -67,6 +68,7 @@ skills-section.scss
 
     .skill-icon {
         width: 75px;
+        height: 80px;
         display: flex;
         flex-direction: column;
         align-items: center;
