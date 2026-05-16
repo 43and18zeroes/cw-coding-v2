@@ -17,6 +17,7 @@ skills-section.scss
 
     @media (min-width: 600px) {
         flex-direction: row-reverse;
+        padding-left: 0;
     }
 
     @media (min-width: 1280px) {
@@ -28,6 +29,7 @@ skills-section.scss
     position: relative;
     text-align: right;
     padding-right: 32px;
+    transform: translateY(-24px);
 
     .decorative-line {
         top: 35px;
@@ -44,6 +46,13 @@ skills-section.scss
     }
 
     @media (min-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 64px;
+    }
+
+    @media (min-width: 768px) {
         width: 50%;
     }
 }
@@ -51,7 +60,6 @@ skills-section.scss
 .contact-btn {
 
     &--mobile {
-        // transform: translateY(-24px);
 
         @media (min-width: 600px) {
             display: none;
@@ -76,7 +84,7 @@ skills-section.scss
     gap: 8px;
     padding: 0 16px;
 
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
         width: 50%;
     }
 
@@ -105,7 +113,6 @@ skills-section.scss
         }
 
         @media (min-width: 600px) {
-            transform: translateY(+16px);
             width: 85px;
             height: 105px;
 
