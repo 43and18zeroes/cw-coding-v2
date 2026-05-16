@@ -5,6 +5,8 @@ skills-section.scss
 @use '../../../styles/mixins' as mixins;
 
 :host {
+    position: relative;
+    z-index: 2000;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -45,7 +47,7 @@ skills-section.scss
 .contact-btn {
 
     &--mobile {
-        transform: translateY(-24px);
+        // transform: translateY(-24px);
 
         @media (min-width: 600px) {
             display: none;
