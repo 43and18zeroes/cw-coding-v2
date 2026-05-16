@@ -107,7 +107,7 @@ skills-section.scss
         @media (min-width: 600px) {
             transform: translateY(+16px);
             width: 85px;
-            height: 100px;
+            height: 105px;
 
             >span:first-child {
                 --svg-size: 50px;
@@ -117,6 +117,21 @@ skills-section.scss
 
             span {
                 font-size: 14px;
+            }
+        }
+
+        @media (min-width: 600px) {
+            width: 96px;
+            height: 120px;
+
+            >span:first-child {
+                --svg-size: 64px;
+                width: var(--svg-size);
+                height: var(--svg-size);
+            }
+
+            span {
+                font-size: 16px;
             }
         }
     }
