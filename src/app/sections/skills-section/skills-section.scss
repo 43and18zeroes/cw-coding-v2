@@ -11,7 +11,6 @@ skills-section.scss
     justify-content: space-around;
     align-items: center;
     transform: translateY(-24px);
-    @include mixins.general-padding;
 
     @media (min-width: 600px) {
         flex-direction: row-reverse;
@@ -44,6 +43,7 @@ skills-section.scss
 
         @media (min-width: 600px) {
             margin-bottom: revert;
+            padding-left: 6px;
         }
     }
 
@@ -120,26 +120,26 @@ skills-section.scss
         }
 
         @media (min-width: 600px) {
-            width: 85px;
-            height: 105px;
-
-            >span:first-child {
-                --svg-size: 50px;
-                width: var(--svg-size);
-                height: var(--svg-size);
-            }
-
-            span {
-                font-size: 14px;
-            }
-        }
-
-        @media (min-width: 600px) {
             width: 96px;
             height: 120px;
 
             >span:first-child {
                 --svg-size: 64px;
+                width: var(--svg-size);
+                height: var(--svg-size);
+            }
+
+            span {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            width: 104px;
+            height: 128px;
+
+            >span:first-child {
+                --svg-size: 72px;
                 width: var(--svg-size);
                 height: var(--svg-size);
             }
