@@ -17,7 +17,7 @@ skills-section.scss
     }
 
     @media (min-width: 1280px) {
-        padding-top: 100px;
+        padding-top: 72px;
     }
 }
 
@@ -36,6 +36,12 @@ skills-section.scss
             right: -20px;
             width: 61px;
         }
+
+        @media (min-width: 1024px) {
+            top: 48px;
+            right: -20px;
+            width: 61px;
+        }
     }
 
     p {
@@ -43,7 +49,11 @@ skills-section.scss
 
         @media (min-width: 600px) {
             margin-bottom: revert;
-            padding-left: 6px;
+            padding-left: 16px;
+        }
+
+        @media (min-width: 600px) {
+            padding-left: 32px;
         }
     }
 
@@ -57,6 +67,12 @@ skills-section.scss
 
     @media (min-width: 768px) {
         width: 50%;
+    }
+
+    @media (min-width: 1024px) {
+        h2 {
+            font-size: 60px;
+        }
     }
 }
 
@@ -148,6 +164,21 @@ skills-section.scss
                 font-size: 16px;
             }
         }
+
+        @media (min-width: 1024px) {
+            width: 112px;
+            height: 136px;
+
+            >span:first-child {
+                --svg-size: 80px;
+                width: var(--svg-size);
+                height: var(--svg-size);
+            }
+
+            span {
+                font-size: 16px;
+            }
+        }
     }
 }
 
@@ -156,4 +187,9 @@ skills-section.scss
     left: 0;
     bottom: -150px;
     width: 100px;
+
+    @media (min-width: 920px) {
+        width: 200px;
+        bottom: -300px;
+    }
 }
