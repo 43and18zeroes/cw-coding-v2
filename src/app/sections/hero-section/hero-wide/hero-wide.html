@@ -25,7 +25,9 @@ hero-wide.html
         talk!</button>
     </div>
     <img class="img-arch"
-      src="/img/hero/header-vector-desktop.webp" alt="Arch">
+      src="/img/hero/header-vector-wide.webp" srcset="/img/hero/header-vector-mobile.webp 600w, 
+             /img/hero/header-vector-wide.webp 1920w"
+      sizes="100vw" alt="Arch">
   </div>
   <div class="hero-footer">
     <div class="socials">
@@ -45,7 +47,8 @@ hero-wide.html
             fill="white" />
         </svg></a>
       <a href="mailto:christoph@cw-coding.de"
-        target="_blank" class="text-link">christoph@cw-coding.de</a>
+        target="_blank"
+        class="text-link">christoph@cw-coding.de</a>
     </div>
     <a class="scroll-down"
       (click)="onNavigate('about')">Scroll down <svg
