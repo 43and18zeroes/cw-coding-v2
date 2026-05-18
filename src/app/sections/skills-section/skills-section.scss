@@ -2,8 +2,6 @@
 skills-section.scss
 ========================= */
 
-@use '../../../styles/mixins' as mixins;
-
 :host {
     position: relative;
     z-index: 2000;
@@ -107,10 +105,12 @@ skills-section.scss
     justify-content: center;
     flex-wrap: wrap;
     gap: 4px;
-    padding: 0 16px;
+    padding: 0 32px;
+    transform: translateX(-8px);
 
     @media (min-width: 600px) {
-        padding: 0;
+        padding: 0 0 0 32px;
+        transform: translateX(0px);
     }
 
     @media (min-width: 768px) {
