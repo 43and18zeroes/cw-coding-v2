@@ -118,11 +118,11 @@ skills-section.scss
     }
 
     @media (min-width: 1024px) {
-        padding-left: 50px;
+        padding: 0 32px 0 50px;
     }
 
     @media (min-width: 1280px) {
-        padding-left: 100px;
+        padding: 0 32px 0 100px;
     }
 
     .skill-icon {
