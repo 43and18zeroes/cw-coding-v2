@@ -86,7 +86,7 @@ export class App {
     this.updateActiveSection();
 
     setTimeout(() => {
-      this.scrollToSection(2, true);
+      this.scrollToSection(3, true);
     });
   }
 
