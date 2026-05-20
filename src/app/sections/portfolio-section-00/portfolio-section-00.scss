@@ -2,3 +2,10 @@
 portfolio-section-00.scss
 ========================= */
 
+.portfolio-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 16px 88px 16px;
+}
